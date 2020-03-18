@@ -105,7 +105,7 @@ gulp.task("webpack", function() {
     .pipe(webpack({
       mode: "development",
       output: {
-        filename: "main.js",
+        filename: "script.js",
       },
       module: {
         rules: [

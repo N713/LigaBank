@@ -1,21 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="preload" href="fonts/robotoregular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-    <link rel="preload" href="fonts/robotomedium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-    <link rel="preload" href="fonts/robotobold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.min.css">
-    <script>
-        document.createElement( "picture" );
-        //По руководству автора - http://scottjehl.github.io/picturefill/
-    </script>
-    <title>LigaBank</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="preload" href="fonts/robotoregular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="fonts/robotomedium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="fonts/robotobold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.min.css">
+  <script>
+    document.createElement( "picture" );
+    //По руководству автора - http://scottjehl.github.io/picturefill/
+  </script>
+  <title>LigaBank</title>
 </head>
 <body>
-    <script src="js/vendor.js"></script>
-    <script src="js/main.js"></script>
+  <h1 class="visually-hidden">Лига Банк</h1>
+  <header class="header">
+    <a href="#" class="header__logo">
+      <img src="img/Logo.svg" width="152" height="28" alt="Лига Банк">
+    </a>
+    <nav class="header__nav">
+      <ul class="list header__list">
+        <li class="list__item header__list-item">
+          <a class="list__item-link header__list-item-link" href="#">Услуги</a>
+        </li>
+        <li class="list__item header__list-item">
+          <a class="list__item-link header__list-item-link" href="#">Рассчитать кредит</a>
+        </li>
+        <li class="list__item header__list-item">
+          <a class="list__item-link header__list-item-link" href="#">Контакты</a>
+        </li>
+        <li class="list__item header__list-item">
+          <a class="list__item-link header__list-item-link" href="#">Задать вопрос</a>
+        </li>
+      </ul>
+      <a href="#" class="header__login">
+        <img src="img/icon-login.svg" width="20" height="22" alt="Войти в Интернет-банк">
+        <span class="header__login-link">Войти в Интернет-банк</span>
+      </a>
+    </nav>
+  </header>
+  <section class="slider">
+    <ul class="list slider__list">
+      <li class="list__item slider__list-item">
+        <h2>Лига Банк</h2>
+        <p>Кредиты на любой случай</p>
+        <a href="#" class="button button--white list__item-link slider__list-item-link">Рассчитать кредит</a>
+        <img src="img/black-card@1x.png" width="335" height="228" alt="Дебетовая карта. Черная">
+        <img src="img/white-card@1x.png" width="335" height="228" alt="Дебетовая карта. Белая">
+      </li>
+      <li class="list__item slider__list-item">
+        <h2>Лига Банк</h2>
+        <p>Ваша уверенность в завтрашнем дне</p>
+        <img src="img/first-slide-bg@1x.png" width="1366" height="400" alt="Уверенность">
+      </li>
+      <li class="list__item slider__list-item">
+        <h2>Лига Банк</h2>
+        <p>Всегда рядом</p>
+        <a href="#" class="button button list__item-link slider__list-item-link">Найти отделение</a>
+        <img src="img/second-slide-bg@1x.png" width="1366" height="400" alt="Всегда рядом">
+      </li>
+    </ul>
+    <div class="slider__radio">
+      <input type="radio" name="slider-radio" value="initial" id="initial">
+      <label for="initial" class="visually-hidden">Изначальный слайд</label>
+
+      <input type="radio" name="slider-radio" value="first" id="first">
+      <label for="first" class="visually-hidden">Первый слайд</label>
+
+      <input type="radio" name="slider-radio" value="second" id="second">
+      <label for="second" class="visually-hidden">Второй слайд</label>
+    </div>
+  </section>
+  <main class="main">
+    <section class="services">
+      <ul class="list services__list">
+        <li class="list__item services__list-item">
+          <a class="list__item-link services__list-item-link services__list-item-link--savings" href="#">Вклады</a>
+        </li>
+        <li class="list__item services__list-item">
+          <a class="list__item-link services__list-item-link services__list-item-link--credits" href="#">Кредиты</a>
+        </li>
+        <li class="list__item services__list-item">
+          <a class="list__item-link services__list-item-link services__list-item-link--insurance" href="#">Страхование</a>
+        </li>
+        <li class="list__item services__list-item">
+          <a class="list__item-link services__list-item-link services__list-item-link--online" href="#">Онлайн - сервисы</a>
+        </li>
+      </ul>
+      <ul class="list services__second-list">
+        <li class="list__item services__second-list-item">
+          <div class="services__second-list-item-wrapper">
+            <h3>Вклады Лига Банка – это выгодная инвестиция в свое будущее</h3>
+            <ul class="list services__sublist">
+              <li class="list__item services__sublist-item">Проценты по вкладам до 7%</li>
+              <li class="list__item services__sublist-item">Разнообразные условия</li>
+              <li class="list__item services__sublist-item">
+                Возможность ежемесячной капитализации или вывод процентов на банковскую карту
+              </li>
+            </ul>
+            <button class="button sublist__button">Узнать подробнее</button>
+          </div>
+          <img src="img/piggybank@1x.png" width="440" height="290" alt="Копилка">
+        </li>
+        <li class="list__item services__second-list-item">
+          <div class="services__second-list-item-wrapper">
+            <h3>Лига Банк выдает кредиты под любые цели</h3>
+            <ul class="list services__sublist">
+              <li class="list__item services__sublist-item">Ипотечный кредит</li>
+              <li class="list__item services__sublist-item">Автокредит</li>
+              <li class="list__item services__sublist-item">Потребительский кредит</li>
+            </ul>
+            <p>
+              Рассчитайте ежемесячный платеж и ставку по кредиту воспользовавшись
+              нашим <a href="#" class="services__sublist-link">кредитным калькулятором</a>
+            </p>
+          </div>
+          <img src="img/car@1x.png" width="440" height="290" alt="Автомобиль">
+        </li>
+        <li class="list__item services__second-list-item">
+          <div class="services__second-list-item-wrapper">
+            <h3>Лига Страхование — застрахуем все что захотите</h3>
+            <ul class="list services__sublist">
+              <li class="list__item services__sublist-item">Автомобильное страхование</li>
+              <li class="list__item services__sublist-item">Страхование жизни и здоровья</li>
+              <li class="list__item services__sublist-item">Страхование недвижимости</li>
+            </ul>
+            <button class="button sublist__button">Узнать подробнее</button>
+          </div>
+          <img src="img/lock@1x.png" width="440" height="290" alt="Замок">
+        </li>
+        <li class="list__item services__second-list-item">
+          <div class="services__second-list-item-wrapper">
+            <h3>Лига Банк — это огромное количество онлайн-сервисов для вашего удобствае</h3>
+            <ul class="list services__sublist">
+              <li class="list__item services__sublist-item">Мобильный банк, который всегда под рукой</li>
+              <li class="list__item services__sublist-item">Приложение Лига-проездной позволит вам оплачивать билеты по всему миру</li>
+            </ul>
+            <button class="button sublist__button">Узнать подробнее</button>
+          </div>
+          <img src="img/cellphone@1x.png" width="440" height="290" alt="Смартфон">
+        </li>
+      </ul>
+    </section>
+    <form class="form">
+      <h2>Кредитный калькулятор</h2>
+      <div class="form__first-step">
+        <h3>Шаг 1. Цель кредита</h3>
+        <select name="select" required>
+          <option value="non-selected" selected>Выберите цель кредита</option>
+          <option value="mortпage">Ипотечное кредитование</option>
+          <option value="carloan">Автомобильное кредитование</option>
+          <option value="consumercredit">Потребительский кредит</option>
+        </select>
+      </div>
+      <div class="form__second-step">
+        <h2>Шаг 2. Введите параметры кредита</h2>
+        <div class="form__price-wrapper">
+          <label for="property-price">Стоимость недвижимости</label>
+          <div class="form__price-wrapper-second">
+            <button class="form__minus-button">
+              <span class="visually-hidden">Минус</span>
+            </button>
+            <input type="text" value="2 500 000 рублей" name="price" id="property-price" required>
+            <button class="form__plus-button">
+              <span class="visually-hidden">Плюс</span>
+            </button>
+          </div>
+          <span>От 1 200 000 до 25 000 000 рублей</span>
+        </div>
+      </div>
+    </form>
+  </main>
+  <script src="js/vendor.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>
