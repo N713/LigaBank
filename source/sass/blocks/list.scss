@@ -1,0 +1,24 @@
+.list,
+.list__item,
+.list__item-link {
+  color: $darkColor;
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.list__item-link {
+  text-decoration: none;
+
+  &:hover {
+    cursor: pointer;
+    color: $blueColor;
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+}

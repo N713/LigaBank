@@ -1,0 +1,158 @@
+.form {
+  @include reset;
+  color: $darkColor;
+  padding-top: 100px;
+}
+
+.form input[type="text"] {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
+  text-align: center;
+  vertical-align: middle;
+  border: 1px solid #1f1e25;
+  box-sizing: border-box;
+  width: 600px;
+  min-height: 60px;
+  border-radius: 4px;
+  background-color: white;
+  position: relative;
+}
+
+.form input[type="range"] {
+  @include reset;
+  box-sizing: border-box;
+  width: 600px;
+  min-height: 1px;
+  background-color: #1f1e25;
+}
+
+.form__minus-button,
+.form__plus-button {
+  position: absolute;
+  box-sizing: border-box;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center center;
+  border: none;
+  width: 16px;
+  height: 16px;
+  z-index: 1;
+
+  &:hover {
+    cursor: pointer;
+    opacity: 0.5;
+  }
+
+  &:active {
+    opacity: 0.2;
+  }
+}
+
+.form__plus-button {
+  background-image: url("../img/icon-plus.svg");
+  margin-top: 22px;
+  margin-left: -40px;
+}
+
+.form__minus-button {
+  background-image: url("../img/icon-minus.svg");
+  margin-top: 22px;
+  margin-left: 20px;
+}
+
+.form__first-step,
+.form__second-step,
+.form__offer,
+.form__third-step {
+  @include reset;
+}
+
+.form h2 {
+  @include reset;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 41px;
+  line-height: 57px;
+  margin-bottom: 70px;
+}
+
+.form__first-step h3,
+.form__second-step h3,
+.form__offer h3,
+.form__third-step h3 {
+  @include reset;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 31px;
+  margin-bottom: 30px;
+}
+
+.form__first-step select {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
+  border: 1px solid $darkColor;
+  box-sizing: border-box;
+  width: 600px;
+  min-height: 60px;
+  border-radius: 4px;
+  background-color: white;
+  padding-left: 24px;
+  margin-bottom: 40px;
+}
+
+.form__first-step option {
+  box-sizing: border-box;
+  width: 600px;
+  min-height: 60px;
+  border-radius: 4px;
+  background-color: white;
+  padding-left: 24px;
+  margin-top: 30px;
+}
+
+.form__price-wrapper {
+  margin-bottom: 30px;
+}
+
+.form__price-wrapper label {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 22px;
+  color: #394959;
+}
+
+.form__price-wrapper span {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+  color: #707c87;
+}
+
+.form__price-wrapper-second {
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+.form__initial-payment-wrapper,
+.form__year-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.form__initial-payment-wrapper label,
+.form__year-wrapper label {
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 22px;
+  color: #394959;
+  margin-bottom: 15px;
+}
+
+.form__initial-payment-wrapper input[type="text"],
+.form__year-wrapper input[type="text"] {
+  margin-bottom: 22px;
+}

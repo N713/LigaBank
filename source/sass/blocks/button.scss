@@ -1,0 +1,29 @@
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  padding: 5px;
+  width: 234px;
+  height: 53px;
+  border-radius: 4px;
+  color: $lightBlueColor;
+  background-color: $blueColor;
+
+  &:hover {
+    cursor: pointer;
+    background-color: darken($blueColor, 15);
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}
+
+.button--white {
+  color: $darkColor;
+  background-color: $lightBlueColor;
+}

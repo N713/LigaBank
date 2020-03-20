@@ -1,0 +1,57 @@
+.header,
+.header__list,
+.header__login {
+  @include reset;
+  display: flex;
+  align-items: center;
+}
+
+.header {
+  padding: 34.5px 61px;
+  background-color: $lightBlueColor;
+  box-sizing: border-box;
+  max-width: $maxWidth;
+  margin: 0 auto;
+}
+
+.header__logo {
+  margin-right: 4.7%;
+}
+
+.header__nav {
+  display: flex;
+  flex-grow: 1;
+  min-width: auto;
+}
+
+.header__list-item {
+  display: flex;
+  flex-shrink: 0;
+  margin-right: 25px;
+}
+
+.header__list-item-link,
+.header__login {
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+}
+
+.header__login {
+  flex-shrink: 0;
+  text-decoration: none;
+  cursor: pointer;
+  color: $darkColor;
+
+  &:hover {
+    color: $blueColor;
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+}
+
+.header__login-link {
+  margin-left: 10px;
+}
