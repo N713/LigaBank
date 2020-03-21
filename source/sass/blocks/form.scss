@@ -2,6 +2,18 @@
   @include reset;
   color: $darkColor;
   padding-top: 100px;
+  margin-bottom: 100px;
+}
+
+.form__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.form__wrapper-second {
+  display: flex;
+  flex-direction: column;
 }
 
 .form input[type="text"] {
@@ -25,6 +37,7 @@
   width: 600px;
   min-height: 1px;
   background-color: #1f1e25;
+  margin-bottom: 30px;
 }
 
 .form__minus-button,
@@ -155,4 +168,166 @@
 .form__initial-payment-wrapper input[type="text"],
 .form__year-wrapper input[type="text"] {
   margin-bottom: 22px;
+}
+
+.form__checkbox-wrapper label {
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.form__checkbox-wrapper label,
+.form__checkbox-wrapper input[type="checkbox"] {
+  cursor: pointer;
+}
+
+.form__checkbox-wrapper input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  border-radius: 2px;
+  background-color: $blueColor;
+}
+
+.form__offer {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  width: 500px;
+  padding: 60px;
+  padding-left: 58px;
+  padding-right: 69px;
+  border-radius: 4px;
+  background-color: $lightBlueColor;
+}
+
+.form__offer h3 {
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 31px;
+}
+
+.form__offer-wrapper,
+.form__offer-wrapper h4,
+.form__offer-wrapper span,
+.form__offer-wrapper-outer {
+  @include reset;
+}
+
+.form__offer-wrapper-outer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.form__offer-wrapper {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: 177px;
+  margin-bottom: 40px;
+}
+
+.form__offer-wrapper h4 {
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 31px;
+  margin-bottom: 15px;
+}
+
+.form__offer-wrapper span {
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.form__offer .button {
+  margin: 0 auto;
+}
+
+.form__third-step {
+  margin: 0 auto;
+  margin-top: 70px;
+  box-sizing: border-box;
+  width: 770px;
+  padding: 70px;
+  background-color: $lightBlueColor;
+}
+
+.form__third-step h3 {
+  @include reset;
+  text-align: center;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 31px;
+}
+
+.form__third-step input[type="text"] {
+  width: 100%;
+  text-align: left;
+  padding-left: 24px;
+  background-color: $lightBlueColor;
+  font-size: 18px;
+  line-height: 25px;
+  letter-spacing: 0.03em;
+  color: #707c87;
+  margin-bottom: 30px;
+  border: 1px solid #0a1e32;
+}
+
+.form__list {
+  @include reset;
+  display: flex;
+  flex-direction: column;
+}
+
+.form__list-item {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 0;
+  border-bottom: 1px solid #C4C4C4;
+}
+
+.form__list-item h4,
+.form__list-item span {
+  @include reset;
+}
+
+.form__list-item h4 {
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 31px;
+}
+
+.form__list-item span {
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.form__third-step-wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.form__third-step-wrapper input[type="tel"],
+.form__third-step-wrapper input[type="email"] {
+  width: (300 / 630) * 100%;
+  height: 60px;
+  padding-left: 24px;
+  background-color: $lightBlueColor;
+  border: 1px solid #0a1e32;
+  box-sizing: border-box;
+  border-radius: 4px;
+  font-size: 18px;
+  line-height: 25px;
+  letter-spacing: 0.03em;
+  color: #707c87;
+}
+
+.form__third-step .button {
+  margin: 0 auto;
 }

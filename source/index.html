@@ -140,122 +140,126 @@
     </section>
     <form class="form">
       <h2>Кредитный калькулятор</h2>
-      <div class="form__first-step">
-        <h3>Шаг 1. Цель кредита</h3>
-        <select name="select">
-          <option value="non-selected">Выберите цель кредита</option>
-          <option value="mortgage">Ипотечное кредитование</option>
-          <option value="carloan">Автомобильное кредитование</option>
-          <option value="consumercredit">Потребительский кредит</option>
-        </select>
-      </div>
-      <div class="form__second-step">
-        <h3>Шаг 2. Введите параметры кредита</h3>
-        <div class="form__price-wrapper">
-          <label for="property-price">Стоимость недвижимости</label>
-          <div class="form__price-wrapper-second">
-            <button class="form__minus-button">
-              <span class="visually-hidden">Минус</span>
-            </button>
-            <input type="text" value="2 500 000 рублей" name="price"
-                   id="property-price" data-price-step="100000" required>
-            <button class="form__plus-button">
-              <span class="visually-hidden">Плюс</span>
-            </button>
+      <div class="form__wrapper">
+        <div class="form__wrapper-second">
+          <div class="form__first-step">
+            <h3>Шаг 1. Цель кредита</h3>
+            <select name="select">
+              <option value="non-selected">Выберите цель кредита</option>
+              <option value="mortgage">Ипотечное кредитование</option>
+              <option value="carloan">Автомобильное кредитование</option>
+              <option value="consumercredit">Потребительский кредит</option>
+            </select>
           </div>
-          <span>От 1 200 000 до 25 000 000 рублей</span>
-        </div>
-        <div class="form__initial-payment-wrapper">
-          <label for="initial-payment">Первоначальный взнос</label>
-          <input type="text" value="200 000 рублей" name="initial-pay"
-                 id="initial-payment" required>
-          <input type="range" name="initial-percent" id="initial-percent"
-                 min="10" max="100" step="5" list="marks" value="10">
-          <datalist id="marks">
-            <option value="10" label="10%">
-          </datalist>
-        </div>
-        <div class="form__year-wrapper">
-          <label for="initial-payment">Первоначальный взнос</label>
-          <input type="text" value="5 лет" name="years"
-                 id="years" required>
-          <input type="range" name="years-range" id="years-range"
-                 min="5" max="30" step="1" list="yearsmarks" value="5">
-          <datalist id=yearsmarks>
-            <option value="5" label="5 лет">
-            <option value="30" label="30 лет">
-          </datalist>
-        </div>
-      </div>
-      <div class="form__checkbox-wrapper">
-        <input type="checkbox" name="mother-money" id="mother-money" value="mother-money" checked>
-        <label for="mother-money">Использовать материнский капитал</label>
-      </div>
-      <div class="form__offer">
-        <h3>Наше предложение</h3>
-        <div class="form__offer-wrapper-outer">
-          <div class="form__offer-wrapper">
-            <h4>1 330 000 рублей</h4>
-            <span>Сумма ипотеки</span>
-          </div>
-          <div class="form__offer-wrapper">
-            <h4>9,40%</h4>
-            <span>Процентная ставка</span>
-          </div>
-          <div class="form__offer-wrapper">
-            <h4>27 868 рублей</h4>
-            <span>Ежемесячный платеж</span>
-          </div>
-          <div class="form__offer-wrapper">
-            <h4>61 929 рублей</h4>
-            <span>Необходимый доход</span>
+          <div class="form__second-step">
+            <h3>Шаг 2. Введите параметры кредита</h3>
+            <div class="form__price-wrapper">
+              <label for="property-price">Стоимость недвижимости</label>
+              <div class="form__price-wrapper-second">
+                <button class="form__minus-button">
+                  <span class="visually-hidden">Минус</span>
+                </button>
+                <input type="text" value="2 500 000 рублей" name="price"
+                       id="property-price" data-price-step="100000" required>
+                <button class="form__plus-button">
+                  <span class="visually-hidden">Плюс</span>
+                </button>
+              </div>
+              <span>От 1 200 000 до 25 000 000 рублей</span>
+            </div>
+            <div class="form__initial-payment-wrapper">
+              <label for="initial-payment">Первоначальный взнос</label>
+              <input type="text" value="200 000 рублей" name="initial-pay"
+                     id="initial-payment" required>
+              <input type="range" name="initial-percent" id="initial-percent"
+                     min="10" max="100" step="5" list="marks" value="10">
+              <datalist id="marks">
+                <option value="10" label="10%">
+              </datalist>
+            </div>
+            <div class="form__year-wrapper">
+              <label for="initial-payment">Первоначальный взнос</label>
+              <input type="text" value="5 лет" name="years"
+                     id="years" required>
+              <input type="range" name="years-range" id="years-range"
+                     min="5" max="30" step="1" list="yearsmarks" value="5">
+              <datalist id=yearsmarks>
+                <option value="5" label="5 лет">
+                <option value="30" label="30 лет">
+              </datalist>
+            </div>
+            <div class="form__checkbox-wrapper">
+              <input type="checkbox" name="mother-money" id="mother-money" value="mother-money" checked>
+              <label for="mother-money">Использовать материнский капитал</label>
+            </div>
           </div>
         </div>
-        <button class="button button--make-request">Оформить заявку</button>
-      </div>
-      <div class="form__third-step">
-        <h3>Шаг 3. Оформление заявки</h3>
-        <ul class="list form__list">
-          <li class="list__item form__list-item">
-            <h4>№ 0010</h4>
-            <span>Номер заявки</span>
-          </li>
-          <li class="list__item form__list-item">
-            <h4>Имотека</h4>
-            <span>Цель кредита</span>
-          </li>
-          <li class="list__item form__list-item">
-            <h4>200 000 рублей</h4>
-            <span>Первоначальный взнос</span>
-          </li>
-          <li class="list__item form__list-item">
-            <h4>5 лет</h4>
-            <span>Срок кредитования</span>
-          </li>
-        </ul>
-        <label class="visually-hidden" for="client-name">Фамилия, Имя, Отчество</label>
-        <input type="text" name="client-name" id="client-name"
-               placeholder="ФИО" required>
-        <div class="form__third-step-wrapper">
-          <label class="visually-hidden" for="number">Номер телефона</label>
-          <input type="tel" name="client-tel" id="number" placeholder="Телефон"
-                 maxlength="18" data-mask="+7(000)000 00 00" required>
+        <div class="form__offer">
+          <h3>Наше предложение</h3>
+          <div class="form__offer-wrapper-outer">
+            <div class="form__offer-wrapper">
+              <h4>1 330 000 рублей</h4>
+              <span>Сумма ипотеки</span>
+            </div>
+            <div class="form__offer-wrapper">
+              <h4>9,40%</h4>
+              <span>Процентная ставка</span>
+            </div>
+            <div class="form__offer-wrapper">
+              <h4>27 868 рублей</h4>
+              <span>Ежемесячный платеж</span>
+            </div>
+            <div class="form__offer-wrapper">
+              <h4>61 929 рублей</h4>
+              <span>Необходимый доход</span>
+            </div>
+          </div>
+          <button class="button button--make-request">Оформить заявку</button>
+        </div>
+        <div class="form__third-step">
+          <h3>Шаг 3. Оформление заявки</h3>
+          <ul class="list form__list">
+            <li class="list__item form__list-item">
+              <h4>№ 0010</h4>
+              <span>Номер заявки</span>
+            </li>
+            <li class="list__item form__list-item">
+              <h4>Ипотека</h4>
+              <span>Цель кредита</span>
+            </li>
+            <li class="list__item form__list-item">
+              <h4>200 000 рублей</h4>
+              <span>Первоначальный взнос</span>
+            </li>
+            <li class="list__item form__list-item">
+              <h4>5 лет</h4>
+              <span>Срок кредитования</span>
+            </li>
+          </ul>
+          <label class="visually-hidden" for="client-name">Фамилия, Имя, Отчество</label>
+          <input type="text" name="client-name" id="client-name"
+                 placeholder="ФИО" required>
+          <div class="form__third-step-wrapper">
+            <label class="visually-hidden" for="number">Номер телефона</label>
+            <input type="tel" name="client-tel" id="number" placeholder="Телефон"
+                   maxlength="18" data-mask="+7(000)000 00 00" required>
 
-          <label class="visually-hidden" for="email">Номер телефона</label>
-          <input type="email" name="client-email" id="email" placeholder="email" required>
+            <label class="visually-hidden" for="email">Номер телефона</label>
+            <input type="email" name="client-email" id="email" placeholder="email" required>
+          </div>
+          <button type="submit" class="button button--submit">Отправить</button>
         </div>
       </div>
-      <button type="submit" class="button button--submit">Отправить</button>
     </form>
     <section class="divisions">
       <h2>Отделения Лига Банка</h2>
       <div class="divisions__checkboxes">
         <div class="divisions__wrapper">
-          <input type="checkbox" name="Russia" id="Russia" value="Russia">
+          <input type="checkbox" name="Russia" id="Russia" value="Russia" checked>
           <label for="Russia">Россия</label>
         </div>
         <div class="divisions__wrapper">
-          <input type="checkbox" name="sng" id="sng" value="SNG">
+          <input type="checkbox" name="sng" id="sng" value="SNG" checked>
           <label for="sng">СНГ</label>
         </div>
         <div class="divisions__wrapper">
@@ -291,11 +295,11 @@
         </li>
       </ul>
     </nav>
-    <div class="footer__contacts-wrapper">
+    <div class="footer__contacts-wrapper footer__contacts-wrapper--smartphone">
       <h2>*0904</h2>
       <p>Бесплатно для абонентов МТС, Билайн, Мегафон, Теле2</p>
     </div>
-    <div class="footer__contacts-wrapper">
+    <div class="footer__contacts-wrapper footer__contacts-wrapper--phone">
       <h2>8 800 111 22 33</h2>
       <p>Бесплатный для всех городов России</p>
     </div>

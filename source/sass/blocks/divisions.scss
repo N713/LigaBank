@@ -1,0 +1,57 @@
+.divisions,
+.divisions h2,
+.divisions__wrapper {
+  @include reset;
+  color: $darkColor;
+}
+
+.divisions {
+  margin-bottom: 110px;
+}
+
+.divisions h2 {
+  font-weight: bold;
+  font-size: 41px;
+  line-height: 57px;
+  margin-bottom: 70px;
+}
+
+.divisions__checkboxes {
+  display: flex;
+  justify-content: center;
+  background-color: $lightBlueColor;
+  box-sizing: border-box;
+  padding-top: 36px;
+  padding-bottom: 30px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.divisions__wrapper {
+  display: flex;
+  align-items: center;
+  margin: 0 15px;
+}
+
+.divisions__wrapper input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  background-color: $blueColor;
+  border-radius: 2px;
+}
+
+.divisions__wrapper label {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.divisions__map {
+  width: 100%;
+  min-height: 462px;
+  background-color: lightyellow;
+  background-image: url("../img/map@1x.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
