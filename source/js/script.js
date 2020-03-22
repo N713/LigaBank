@@ -1,4 +1,4 @@
 import {mySwiper} from "./components/slider";
-import {setHadlers} from "./components/services";
+import {setHandlers} from "./components/services";
 
-setHadlers();
+setHandlers();

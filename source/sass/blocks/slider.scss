@@ -52,6 +52,15 @@
   margin-top: 40px;
   margin-left: 19.65%;
   color: $lightBlueColor;
+
+  &:hover {
+    background-color: darken($blueColor, 25);
+    color: $lightBlueColor;
+  }
+
+  &:active {
+    opacity: 0.2;
+  }
 }
 
 .slider__list-item img {
@@ -71,6 +80,15 @@
   font-size: 18px;
   line-height: 21px;
   color: $darkColor;
+
+  &:hover {
+    background-color: darken($blueColor, 25);
+    color: $lightBlueColor;
+  }
+
+  &:active {
+    opacity: 0.2;
+  }
 }
 
 .slider__list-item--initial::before {

@@ -3,7 +3,7 @@
 const tabs = Array.from(document.body.querySelectorAll(`.services .services__list .services__list-item`));
 const slides = Array.from(document.body.querySelectorAll(`.services .services__second-list .services__second-list-item`));
 
-const setAtributes = () => {
+const setAttributes = () => {
   for (let i = 0; i < tabs.length; i++) {
     tabs[i].setAttribute(`data-tab`, `` + i);
   }
@@ -33,8 +33,8 @@ const chooseSlide = (tab) => {
   }
 };
 
-const setHadlers = () => {
-  setAtributes();
+const setHandlers = () => {
+  setAttributes();
 
   tabs.forEach((it) => {
     it.addEventListener(`click`, (evt) => {
@@ -45,4 +45,4 @@ const setHadlers = () => {
   });
 };
 
-export {setHadlers};
+export {setHandlers};

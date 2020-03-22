@@ -7,20 +7,26 @@
   padding-top: 60px;
 }
 
-.services__list-item {
+.services__list {
   display: flex;
+  flex-wrap: nowrap;
+}
+
+.services__list-item {
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
-  width: 293px;
+  width: 292.5px;
   min-height: 93px;
   font-weight: 500;
   font-size: 18px;
   line-height: 21px;
+  z-index: 1;
 }
 
 .services__list-item--active {
   background-color: $lightBlueColor;
+  z-index: -1;
 }
 
 .services__list-item-link {
@@ -31,7 +37,7 @@
   justify-content: center;
   align-items: center;
   padding: 15px;
-  z-index: 1;
+  z-index: 2;
 
   &:hover {
     cursor: pointer;
@@ -96,7 +102,8 @@
 }
 
 .services__second-list-item {
-  width: 100%;
+  box-sizing: border-box;
+  width: 1170px;
   display: flex;
   justify-content: space-between;
   background-color: $lightBlueColor;
