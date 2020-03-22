@@ -89,6 +89,9 @@
 
 .services__second-list {
   @include reset;
+  display: flex;
+  flex-wrap: nowrap;
+  box-sizing: border-box;
   width: 100%;
 }
 
@@ -172,4 +175,8 @@
   width: 198px;
   min-height: 51px;
   margin-top: 15px;
+}
+
+.services__pagination {
+  display: none;
 }

@@ -4,10 +4,10 @@ import Swiper from "swiper";
 
 const mySwiper = new Swiper(`.swiper-container`, {
   speed: 400,
-  spaceBetween: 10,
   slidesPerView: 1,
   slidesPerGroup: 1,
   setWrapperSize: true,
+  spaceBetween: 1000,
 
   pagination: {
     el: '.swiper-pagination',
@@ -19,6 +19,7 @@ const mySwiper = new Swiper(`.swiper-container`, {
 
   autoplay: {
     delay: 4000,
+    disableOnInteraction: false,
   },
 });
 
