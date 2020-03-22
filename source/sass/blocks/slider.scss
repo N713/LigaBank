@@ -1,22 +1,29 @@
 .slider,
 .slider__list {
   @include reset;
-  max-width: $maxWidth;
+  overflow-x: hidden;
+  position: relative;
 }
 
 .slider {
   margin: 0 auto;
+  max-width: $maxWidth;
+}
+
+.slider__list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
 }
 
 .slider__list-item {
   box-sizing: border-box;
-  width: 100%;
+  min-width: 1366px;
   min-height: 400px;
   padding: 25px;
   position: relative;
   background: linear-gradient(180.33deg, rgba(32, 39, 179, 0) 32.89%, #2027b3 99.79%);
   z-index: -2;
-  margin-bottom: 10px;
 }
 
 .slider__list-item h2 {
@@ -100,4 +107,30 @@
   margin-right: (246 / 1366) * 100%;
   top: 80px;
   z-index: -2;
+}
+
+.slider__pagination {
+  width: 48px;
+  height: 20px;
+  margin: 0 auto;
+  position: absolute;
+  bottom: 20px;
+  right: 50%;
+}
+
+.slider__pagination .swiper-pagination-bullet {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin: 2px 4px;
+  border-radius: 4px;
+  background-color: $blueColor;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.slider__pagination .swiper-pagination-bullet-active {
+  background-color: $lightBlueColor;
 }
