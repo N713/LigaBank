@@ -40,13 +40,26 @@
   margin-bottom: 20px;
 }
 
-.footer__contacts-wrapper h2 {
+.footer__contacts-wrapper a {
   @include reset;
+  display: flex;
+  align-items: center;
   font-weight: 500;
   font-size: 16px;
   line-height: 22px;
   margin-bottom: 10px;
   position: relative;
+  text-decoration: none;
+  color: $darkColor;
+
+  &:hover {
+    cursor: pointer;
+    opacity: 0.5;
+  }
+
+  &:active {
+    opacity: 0.2;
+  }
 }
 
 .footer__contacts-wrapper p {
@@ -59,7 +72,7 @@
   color: #707c87;
 }
 
-.footer__contacts-wrapper--smartphone h2::before {
+.footer__contacts-wrapper--smartphone a::before {
   content: url("");
   display: inline-block;
   width: 10px;
@@ -71,7 +84,7 @@
   background-position: center;
 }
 
-.footer__contacts-wrapper--phone h2::before {
+.footer__contacts-wrapper--phone a::before {
   content: url("");
   display: inline-block;
   width: 16px;
