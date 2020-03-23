@@ -8,3 +8,8 @@
 
   @include reset;
 }
+
+.body--dark {
+  background-color: $darkColor;
+  overflow: hidden;
+}

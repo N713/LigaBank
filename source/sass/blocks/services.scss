@@ -41,7 +41,8 @@
 
   &:hover {
     cursor: pointer;
-    outline: 2px solid $blueColor;
+    opacity: 1;
+    background-color: darken($lightBlueColor, 5);
   }
 
   &:active {

@@ -5,7 +5,12 @@
   padding: 60px;
   background-color: $lightBlueColor;
   border: 4px solid $blueColor;
-  margin: 10px auto;
+  position: fixed;
+  margin-top: -277px;
+  margin-left: -330px;
+  top: 50%;
+  left: 50%;
+  z-index: 10;
 }
 
 .login__wrapper {
@@ -51,11 +56,17 @@
 
 .login input[type="text"],
 .login input[type="password"] {
+  box-sizing: border-box;
   width: 100%;
   min-height: 60px;
   background-color: $lightBlueColor;
   border: 1px solid #1f1e25;
   border-radius: 4px;
+  padding-left: 24px;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 25px;
+  color: #707c87;
 }
 
 .login__link {

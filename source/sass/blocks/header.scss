@@ -44,11 +44,12 @@
   color: $darkColor;
 
   &:hover {
-    color: $blueColor;
+    cursor: pointer;
+    opacity: 0.5;
   }
 
   &:active {
-    opacity: 0.5;
+    opacity: 0.2;
   }
 }
 

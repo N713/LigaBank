@@ -1,0 +1,10 @@
+.container {
+  @include reset;
+  width: 100%;
+  height: inherit;
+}
+
+.container--dark {
+  opacity: 0.1;
+  background-color: white;
+}
