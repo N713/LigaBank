@@ -8,7 +8,7 @@
   line-height: 21px;
   padding: 5px;
   width: 234px;
-  height: 53px;
+  min-height: 53px;
   border-radius: 4px;
   color: $lightBlueColor;
   background-color: $blueColor;
@@ -26,4 +26,9 @@
 .button--white {
   color: $darkColor;
   background-color: $lightBlueColor;
+}
+
+.button--submit {
+  width: 100%;
+  min-height: 60px;
 }

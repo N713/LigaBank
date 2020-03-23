@@ -1,0 +1,32 @@
+.non-less {
+  display: flex;
+  flex-direction: column;
+  background-color: $lightBlueColor;
+  width: 500px;
+  padding: 60px 58px;
+  margin: 10px auto;
+}
+
+.non-less h2,
+.non-less p {
+  @include reset;
+}
+
+.non-less h2 {
+  box-sizing: border-box;
+  width: 350px;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 31px;
+  color: $darkColor;
+  margin-bottom: 35px;
+}
+
+.non-less p {
+  box-sizing: border-box;
+  width: 253px;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 22px;
+  color: #394959;
+}

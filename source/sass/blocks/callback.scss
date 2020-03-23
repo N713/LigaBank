@@ -1,0 +1,35 @@
+.callback {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: 500px;
+  padding: 25px;
+  background-color: $lightBlueColor;
+  margin: 10px auto;
+}
+
+.callback button {
+  margin-left: auto;
+  margin-bottom: 26px;
+}
+
+.callback h2 {
+  text-align: center;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 31px;
+  color: $darkColor;
+  margin: 0 auto;
+  margin-bottom: 25px;
+}
+
+.callback p {
+  box-sizing: border-box;
+  width: 293px;
+  margin: 0 auto;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 22px;
+  color: #394959;
+  margin-bottom: 35px;
+}
