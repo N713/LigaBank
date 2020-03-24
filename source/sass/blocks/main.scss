@@ -4,3 +4,9 @@
   margin: 0 auto;
   padding: 0 97px;
 }
+
+@media (max-width: $tabletResolution) {
+  .main {
+    padding: 0;
+  }
+}

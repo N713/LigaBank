@@ -5,6 +5,7 @@
 
 .services {
   padding-top: 60px;
+  overflow-x: hidden;
 }
 
 .services__list {
@@ -104,12 +105,11 @@
 
 .services__second-list-item {
   box-sizing: border-box;
-  width: 1170px;
+  max-width: 1170px;
   display: flex;
   justify-content: space-between;
   background-color: $lightBlueColor;
   padding: 60px 70px;
-  margin-bottom: 10px;
 }
 
 .services__second-list-item h3 {
@@ -175,6 +175,7 @@
   left: -20px;
   top: 5px;
   background-image: url("../img/icon-check.svg");
+  background-size: 12px 12px;
   background-repeat: no-repeat;
   background-position: center center;
 }
@@ -186,5 +187,82 @@
 }
 
 .services__pagination {
-  display: none;
+  display: flex;
+}
+
+@media (max-width: $tabletResolution) {
+  .services {
+    padding-top: 0;
+    position: relative;
+  }
+
+  .services__list {
+    display: none;
+  }
+
+  .services__second-list-item {
+    box-sizing: border-box;
+    min-height: 380px;
+    position: relative;
+    padding: 60px 45px;
+    z-index: -2;
+  }
+
+  .services__second-list-item img {
+    position: absolute;
+    top: 60px;
+    right: 45px;
+    z-index: -1;
+  }
+
+  .services__second-list-item-wrapper h3 {
+    width: 310px;
+    font-size: 18px;
+    line-height: 25px;
+    margin-bottom: 35px;
+  }
+
+  .services__sublist-item {
+    font-size: 16px;
+    line-height: 21px;
+  }
+
+  .services__sublist-item::before {
+    width: 11px;
+    height: 8px;
+    background-size: 11px 8px;
+  }
+
+  .services__sublist-button {
+    margin-top: 30px;
+  }
+
+  .services__pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 20px;
+    margin: 0 auto;
+    position: absolute;
+    bottom: 15px;
+    right: 50%;
+  }
+
+  .services__pagination .swiper-pagination-bullet {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    margin: 2px 4px;
+    border-radius: 4px;
+    background-color: $blueColor;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .services__pagination .swiper-pagination-bullet-active {
+    background-color: #e0e0e0;
+  }
 }

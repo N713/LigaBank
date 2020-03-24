@@ -56,3 +56,23 @@
 .header__login-link {
   margin-left: 10px;
 }
+
+@media (max-width: $tabletResolution) {
+  .header {
+    padding: 23.5px 45px;
+  }
+
+  .header__logo img {
+    width: 133px;
+    height: 24px;
+  }
+
+  .header__login span {
+    display: none;
+  }
+
+  .header__list-item-link {
+    font-size: 14px;
+    line-height: 16px;
+  }
+}
