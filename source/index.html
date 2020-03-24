@@ -27,10 +27,10 @@
       <nav class="header__nav">
         <ul class="list header__list">
           <li class="list__item header__list-item">
-            <a class="list__item-link header__list-item-link" href="#">Услуги</a>
+            <a class="list__item-link header__list-item-link" href="#services">Услуги</a>
           </li>
           <li class="list__item header__list-item">
-            <a class="list__item-link header__list-item-link" href="#">Рассчитать кредит</a>
+            <a class="list__item-link header__list-item-link" href="#calculator">Рассчитать кредит</a>
           </li>
           <li class="list__item header__list-item">
             <a class="list__item-link header__list-item-link" href="#">Контакты</a>
@@ -50,7 +50,7 @@
         <li class="list__item slider__list-item slider__list-item--initial swiper-slide">
           <h2>Лига Банк</h2>
           <p>Кредиты на любой случай</p>
-          <a href="#" class="button button--white list__item-link slider__list-item-link">Рассчитать кредит</a>
+          <a href="#calculator" class="button button--white list__item-link slider__list-item-link">Рассчитать кредит</a>
           <img src="img/black-card@1x.png" width="335" height="228" alt="Дебетовая карта. Черная">
           <img src="img/white-card@1x.png" width="335" height="228" alt="Дебетовая карта. Белая">
         </li>
@@ -59,17 +59,17 @@
           <p>Ваша уверенность в завтрашнем дне</p>
           <img src="img/first-slide-bg@1x.png" width="1366" height="400" alt="Уверенность">
         </li>
-        <li class="list__item slider__list-item swiper-slide">
+        <li class="list__item slider__list-item slider__list-item--divisions swiper-slide">
           <h2>Лига Банк</h2>
           <p>Всегда рядом</p>
-          <a href="#" class="button list__item-link slider__list-item-link">Найти отделение</a>
+          <a href="#divisions" class="button list__item-link slider__list-item-link">Найти отделение</a>
           <img src="img/second-slide-bg@1x.png" width="1366" height="400" alt="Всегда рядом">
         </li>
       </ul>
       <div class="slider__pagination swiper-pagination"></div>
     </section>
     <main class="main">
-      <section class="services swiper-container-services">
+      <section class="services swiper-container-services" id="services">
         <ul class="list services__list">
           <li class="list__item services__list-item services__list-item--active">
             <a class="list__item-link services__list-item-link services__list-item-link--savings" href="#">Вклады</a>
@@ -140,7 +140,7 @@
         </ul>
         <div class="services__pagination swiper-pagination"></div>
       </section>
-      <form class="form">
+      <form class="form" id="calculator">
         <h2>Кредитный калькулятор</h2>
         <div class="form__wrapper">
           <div class="form__wrapper-second">
@@ -253,7 +253,7 @@
           </div>
         </div>
       </form>
-      <section class="divisions">
+      <section class="divisions" id="divisions">
         <h2>Отделения Лига Банка</h2>
         <div class="divisions__checkboxes">
           <div class="divisions__wrapper">

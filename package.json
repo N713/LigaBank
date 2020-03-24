@@ -28,6 +28,7 @@
     "imask": "6.0.3",
     "pixel-glass": "^1.0.13",
     "posthtml-include": "^1.2.0",
+    "smoothscroll-polyfill": "0.4.4",
     "stylelint": "9.10.x",
     "stylelint-config-htmlacademy": "0.1.x",
     "swiper": "^5.3.1",
