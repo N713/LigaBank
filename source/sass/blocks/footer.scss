@@ -16,10 +16,11 @@
 .footer__list,
 .footer__logo-wrapper,
 .footer__contacts-wrapper {
-  @include reset
+  @include reset;
 }
 
 .footer__logo-wrapper p {
+  @include reset;
   width: 252px;
   height: 43px;
   font-weight: normal;
@@ -37,13 +38,14 @@
 }
 
 .footer__list-item {
+  width: auto;
   margin-bottom: 20px;
 }
 
 .footer__contacts-wrapper a {
   @include reset;
-  display: flex;
-  align-items: center;
+  box-sizing: border-box;
+  vertical-align: middle;
   font-weight: 500;
   font-size: 16px;
   line-height: 22px;
@@ -94,4 +96,51 @@
   background-image: url("../img/icon-phone.svg");
   background-repeat: no-repeat;
   background-position: center;
+}
+
+.footer__socials {
+  @include reset;
+}
+
+.footer__socials-item {
+  padding: 7.5px;
+}
+
+.footer__socials-item-link {
+  &:hover {
+    opacity: 0.5;
+  }
+
+  &:active {
+    opacity: 0.2;
+  }
+}
+
+@media (max-width: $tabletResolution) {
+  .footer {
+    padding: 51px 45px;
+    padding-bottom: 60px;
+    max-width: 100%;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    position: relative;
+  }
+
+  .footer__logo-wrapper p {
+    position: relative;
+    top: 170px;
+  }
+
+  .footer__nav {
+    margin-top: -30px;
+  }
+
+  .footer__contacts-wrapper {
+    margin-bottom: 32px;
+    padding-left: 30px;
+  }
+
+  .footer__contacts-wrapper a {
+    width: auto;
+  }
 }

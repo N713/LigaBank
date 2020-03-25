@@ -55,3 +55,15 @@
   background-repeat: no-repeat;
   background-position: center;
 }
+
+@media (max-width: $tabletResolution) {
+  .divisions {
+    padding: 0 45px;
+    margin-bottom: 80px;
+  }
+
+  .divisions h2 {
+    font-size: 32px;
+    line-height: 45px;
+  }
+}
