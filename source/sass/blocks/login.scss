@@ -1,6 +1,7 @@
 .login {
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
   width: 544px;
   padding: 60px;
   background-color: $lightBlueColor;
@@ -87,5 +88,12 @@
 
   &:active {
     opacity: 0.2;
+  }
+}
+
+@media (max-width: $tabletResolution) {
+  .login {
+    width: 678px;
+    padding: 60px 88px;
   }
 }

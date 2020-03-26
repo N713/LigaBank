@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   background-color: $lightBlueColor;
+  box-sizing: border-box;
   width: 500px;
   padding: 60px 58px;
   margin: 10px auto;
@@ -29,4 +30,11 @@
   font-size: 16px;
   line-height: 22px;
   color: #394959;
+}
+
+@media (max-width: $tabletResolution) {
+  .non-less {
+    width: 678px;
+    padding: 60px;
+  }
 }

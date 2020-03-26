@@ -47,3 +47,10 @@
     min-height: 51px;
   }
 }
+
+@media (max-width: $mobileResolution) {
+  .button {
+    width: 188px;
+    height: 43px;
+  }
+}

@@ -14,6 +14,10 @@
   margin: 0 auto;
 }
 
+.header .icon-button {
+  display: none;
+}
+
 .header__logo {
   margin-right: 4.7%;
 }
@@ -74,5 +78,26 @@
   .header__list-item-link {
     font-size: 14px;
     line-height: 16px;
+  }
+}
+
+@media (max-width: $mobileResolution) {
+  .header {
+    padding: 0 15px;
+    padding-top: 12px;
+    padding-bottom: 16px;
+    justify-content: flex-start;
+  }
+
+  .header .icon-button {
+    display: inline-block;
+  }
+
+  .header__nav {
+    display: none;
+  }
+
+  .header__login {
+    margin-left: auto;
   }
 }

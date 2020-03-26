@@ -33,3 +33,10 @@
   color: #394959;
   margin-bottom: 35px;
 }
+
+@media (max-width: $tabletResolution) {
+  .callback {
+    width: 678px;
+    padding: 30px;
+  }
+}
