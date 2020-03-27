@@ -39,6 +39,41 @@
   min-height: 1px;
   background-color: white;
   margin-bottom: 30px;
+  position: relative;
+}
+
+.form__initial-payment-wrapper input[type="range"]::before {
+  content: attr(data-min) "";
+  display: inline-block;
+  position: absolute;
+  top: 20px;
+  width: 30px;
+  font-size: 14px;
+  line-height: 20px;
+  color: #707c87;
+}
+
+.form__year-wrapper input[type="range"]::before {
+  content: attr(data-min) "";
+  display: inline-block;
+  position: absolute;
+  top: 20px;
+  width: 42px;
+  font-size: 14px;
+  line-height: 20px;
+  color: #707c87;
+}
+
+.form__year-wrapper input[type="range"]::after {
+  content: attr(data-max) "";
+  display: inline-block;
+  position: absolute;
+  top: 20px;
+  right: -10px;
+  width: 50px;
+  font-size: 14px;
+  line-height: 20px;
+  color: #707c87;
 }
 
 .form__minus-button,

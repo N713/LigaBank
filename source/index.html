@@ -178,7 +178,8 @@
                 <input type="text" value="200 000 рублей" name="initial-pay"
                        id="initial-payment" required>
                 <input type="range" name="initial-percent" id="initial-percent"
-                       min="10" max="100" step="5" list="marks" value="10">
+                       min="10" max="100" step="5" list="marks" value="10"
+                       data-min="10%">
                 <datalist id="marks">
                   <option value="10" label="10%">
                 </datalist>
@@ -188,7 +189,8 @@
                 <input type="text" value="5 лет" name="years"
                        id="years" required>
                 <input type="range" name="years-range" id="years-range"
-                       min="5" max="30" step="1" list="yearsmarks" value="5">
+                       min="5" max="30" step="1" list="yearsmarks" value="5"
+                       data-min="5 лет" data-max="30 лет">
                 <datalist id=yearsmarks>
                   <option value="5" label="5 лет">
                   <option value="30" label="30 лет">
