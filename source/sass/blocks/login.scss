@@ -96,4 +96,39 @@
     width: 678px;
     padding: 60px 88px;
   }
+
+  .login .icon-button img {
+    width: 16px;
+    height: 16px;
+  }
+
+  .login__form-wrapper .icon-button img {
+    width: 22px;
+    height: 12px;
+  }
+}
+
+@media (max-width: $mobileResolution) {
+  .login {
+    top: 10%;
+    left: 5%;
+    width: 290px;
+    padding: 50px 5px;
+    margin: 0;
+  }
+
+  .login .icon-button img {
+    width: 12px;
+    height: 12px;
+  }
+
+  .login__form-wrapper .icon-button img {
+    width: 22px;
+    height: 12px;
+  }
+
+  .login__link {
+    margin: 0 auto;
+    margin-top: 15px;
+  }
 }

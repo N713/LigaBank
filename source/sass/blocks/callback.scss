@@ -40,3 +40,27 @@
     padding: 30px;
   }
 }
+
+@media (max-width: $mobileResolution) {
+  .callback {
+    width: 290px;
+    padding: 15px;
+  }
+
+  .callback h2 {
+    width: 200px;
+    font-size: 18px;
+    line-height: 25px;
+    margin-bottom: 20px;
+  }
+
+  .callback p {
+    width: 240px;
+    text-align: center;
+  }
+
+  .callback .icon-button img {
+    width: 12px;
+    height: 12px;
+  }
+}
