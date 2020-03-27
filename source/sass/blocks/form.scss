@@ -14,7 +14,7 @@
 .form__wrapper-second {
   display: flex;
   flex-direction: column;
-  width: 600px;
+  width: (600 / 1172) * 100%;
 }
 
 .form input[type="text"] {
@@ -196,7 +196,7 @@
   display: flex;
   flex-direction: column;
   align-self: flex-start;
-  width: 500px;
+  width: (500 / 1172) * 100%;
   padding: 60px;
   padding-left: 58px;
   padding-right: 69px;
@@ -379,8 +379,12 @@
     margin-bottom: 53px;
   }
 
+  .form__offer-wrapper {
+    margin-right: 5%;
+  }
+
   .form__offer-wrapper:nth-of-type(2n) {
-    margin-right: (184 / 678) * 100%;
+    margin-right: 30%;
   }
 
   .form__third-step input[type="text"],
