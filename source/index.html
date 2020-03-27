@@ -173,7 +173,7 @@
                 </div>
                 <span>От 1 200 000 до 25 000 000 рублей</span>
               </div>
-              <div class="form__initial-payment-wrapper">
+              <div class="form__initial-payment-wrapper range">
                 <label for="initial-payment">Первоначальный взнос</label>
                 <input type="text" value="200 000 рублей" name="initial-pay"
                        id="initial-payment" required>
@@ -183,7 +183,7 @@
                   <option value="10" label="10%">
                 </datalist>
               </div>
-              <div class="form__year-wrapper">
+              <div class="form__year-wrapper range">
                 <label for="initial-payment">Первоначальный взнос</label>
                 <input type="text" value="5 лет" name="years"
                        id="years" required>
@@ -194,7 +194,7 @@
                   <option value="30" label="30 лет">
                 </datalist>
               </div>
-              <div class="form__checkbox-wrapper">
+              <div class="form__checkbox-wrapper checkbox">
                 <input type="checkbox" name="mother-money" id="mother-money" value="mother-money" checked>
                 <label for="mother-money">Использовать материнский капитал</label>
               </div>
@@ -260,15 +260,15 @@
       <section class="divisions" id="divisions">
         <h2>Отделения Лига Банка</h2>
         <div class="divisions__checkboxes">
-          <div class="divisions__wrapper">
+          <div class="divisions__wrapper checkbox">
             <input type="checkbox" name="Russia" id="Russia" value="Russia" checked>
             <label for="Russia">Россия</label>
           </div>
-          <div class="divisions__wrapper">
+          <div class="divisions__wrapper checkbox">
             <input type="checkbox" name="sng" id="sng" value="SNG" checked>
             <label for="sng">СНГ</label>
           </div>
-          <div class="divisions__wrapper">
+          <div class="divisions__wrapper checkbox">
             <input type="checkbox" name="Europe" id="Europe" value="Europe">
             <label for="Europe">Европа</label>
           </div>
