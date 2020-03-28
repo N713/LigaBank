@@ -143,6 +143,16 @@
   }
 }
 
+.services__image-wrapper {
+  width: 440px;
+  overflow: hidden;
+}
+
+.services__image-wrapper img {
+  display: block;
+  width: 100%;
+}
+
 .services__sublist {
   @include reset;
   margin-top: 20px;
@@ -208,11 +218,16 @@
     z-index: -2;
   }
 
+  .services__image-wrapper {
+    width: 289px;
+    height: 260px;
+  }
+
   .services__second-list-item img {
-    position: absolute;
-    top: 60px;
-    right: 45px;
-    z-index: -1;
+    position: relative;
+    right: 100px;
+    width: auto;
+    height: 260px;
   }
 
   .services__second-list-item-wrapper h3 {
@@ -233,7 +248,8 @@
     background-size: 11px 8px;
   }
 
-  .services__sublist-button {
+  .services .services__sublist-button {
+    width: 198px;
     margin-top: 30px;
   }
 
@@ -270,6 +286,7 @@
 @media (max-width: $mobileResolution) {
   .services__second-list-item {
     padding: 60px 15px;
+    position: relative;
   }
 
   .services__second-list-item h3 {
@@ -299,5 +316,42 @@
   .services__sublist-button {
     width: 100%;
     margin: 0;
+  }
+
+  .services__image-wrapper {
+    width: 87px;
+    height: 113px;
+    position: absolute;
+    right: 0;
+    top: 120px;
+    z-index: -1;
+  }
+
+  .services__second-list-item img {
+    width: auto;
+    height: 173px;
+    bottom: 50px;
+    right: 135px;
+  }
+
+  .services__image-wrapper--car img {
+    width: auto;
+    height: 142px;
+    bottom: 15px;
+    left: -60px;
+  }
+
+  .services__image-wrapper--lock img {
+    width: auto;
+    height: 98px;
+    right: 27px;
+    top: 10px;
+  }
+
+  .services__image-wrapper--phone img {
+    width: auto;
+    height: 113px;
+    right: 30px;
+    top: 6px;
   }
 }

@@ -101,7 +101,9 @@
               </ul>
               <button class="button services__sublist-button">Узнать подробнее</button>
             </div>
-            <img src="img/piggybank@1x.png" width="440" height="290" alt="Копилка">
+            <div class="services__image-wrapper services__image-wrapper--piggy">
+              <img src="img/piggybank@1x.png" width="440" height="290" alt="Копилка">
+            </div>
           </li>
           <li class="list__item services__second-list-item swiper-slide">
             <div class="services__second-list-item-wrapper">
@@ -116,7 +118,9 @@
                 нашим <a href="#">кредитным калькулятором</a>
               </p>
             </div>
-            <img src="img/car@1x.png" width="440" height="290" alt="Автомобиль">
+            <div class="services__image-wrapper services__image-wrapper--car">
+              <img src="img/car@1x.png" width="440" height="290" alt="Автомобиль">
+            </div>
           </li>
           <li class="list__item services__second-list-item swiper-slide">
             <div class="services__second-list-item-wrapper">
@@ -128,7 +132,9 @@
               </ul>
               <button class="button services__sublist-button">Узнать подробнее</button>
             </div>
-            <img src="img/lock@1x.png" width="440" height="290" alt="Замок">
+            <div class="services__image-wrapper services__image-wrapper--lock">
+              <img src="img/lock@1x.png" width="440" height="290" alt="Замок">
+            </div>
           </li>
           <li class="list__item services__second-list-item swiper-slide">
             <div class="services__second-list-item-wrapper">
@@ -139,7 +145,9 @@
               </ul>
               <button class="button services__sublist-button">Узнать подробнее</button>
             </div>
-            <img src="img/cellphone@1x.png" width="440" height="290" alt="Смартфон">
+            <div class="services__image-wrapper services__image-wrapper--phone">
+              <img src="img/cellphone@1x.png" width="440" height="290" alt="Смартфон">
+            </div>
           </li>
         </ul>
         <div class="services__pagination swiper-pagination"></div>
@@ -286,60 +294,62 @@
           Генеральная лицензия Банка России №1050
           Ⓒ Лига Банк, 2019
         </p>
+        <nav class="footer__nav">
+          <ul class="list footer__list">
+            <li class="list__item footer__list-item">
+              <a class="list__item-link footer__list-item-link" href="#services">Услуги</a>
+            </li>
+            <li class="list__item footer__list-item">
+              <a class="list__item-link footer__list-item-link" href="#calculator">Рассчитать кредит</a>
+            </li>
+            <li class="list__item footer__list-item">
+              <a class="list__item-link footer__list-item-link" href="#">Контакты</a>
+            </li>
+            <li class="list__item footer__list-item">
+              <a class="list__item-link footer__list-item-link" href="#">Задать вопрос</a>
+            </li>
+          </ul>
+        </nav>
       </div>
-      <nav class="footer__nav">
-        <ul class="list footer__list">
-          <li class="list__item footer__list-item">
-            <a class="list__item-link footer__list-item-link" href="#services">Услуги</a>
+      <div class="footer__wrapper">
+        <div class="footer__contacts-wrapper footer__contacts-wrapper--smartphone">
+          <a href="tel:*0904">*0904</a>
+          <p>Бесплатно для абонентов МТС, Билайн, Мегафон, Теле2</p>
+        </div>
+        <div class="footer__contacts-wrapper footer__contacts-wrapper--phone">
+          <a href="tel:88001112233">8 800 111 22 33</a>
+          <p>Бесплатный для всех городов России</p>
+        </div>
+        <ul class="list footer__socials">
+          <li class="list__item footer__socials-item">
+            <a href="#" class="list__item-link footer__socials-item-link footer__socials-item-link--fb">
+              <span class="visually-hidden">Facebook</span>
+              <img src="img/icon-fb.svg" width="9" height="16" alt="Facebook">
+            </a>
           </li>
-          <li class="list__item footer__list-item">
-            <a class="list__item-link footer__list-item-link" href="#calculator">Рассчитать кредит</a>
+          <li class="list__item footer__socials-item">
+            <a href="#" class="list__item-link footer__socials-item-link footer__socials-item-link--ig">
+              <span class="visually-hidden">Instagram</span>
+              <img src="img/icon-ig.svg" width="16" height="16" alt="Instagram">
+            </a>
           </li>
-          <li class="list__item footer__list-item">
-            <a class="list__item-link footer__list-item-link" href="#">Контакты</a>
+          <li class="list__item footer__socials-item">
+            <a href="#" class="list__item-link footer__socials-item-link footer__socials-item-link--tw">
+              <span class="visually-hidden">Twitter</span>
+              <img src="img/icon-tw.svg" width="16" height="13" alt="Facebook">
+            </a>
           </li>
-          <li class="list__item footer__list-item">
-            <a class="list__item-link footer__list-item-link" href="#">Задать вопрос</a>
+          <li class="list__item footer__socials-item">
+            <a href="#" class="list__item-link footer__socials-item-link footer__socials-item-link--yt">
+              <span class="visually-hidden">Youtube</span>
+              <img src="img/icon-yt.svg" width="16" height="13" alt="Youtube">
+            </a>
           </li>
         </ul>
-      </nav>
-      <div class="footer__contacts-wrapper footer__contacts-wrapper--smartphone">
-        <a href="tel:*0904">*0904</a>
-        <p>Бесплатно для абонентов МТС, Билайн, Мегафон, Теле2</p>
       </div>
-      <div class="footer__contacts-wrapper footer__contacts-wrapper--phone">
-        <a href="tel:88001112233">8 800 111 22 33</a>
-        <p>Бесплатный для всех городов России</p>
-      </div>
-      <ul class="list footer__socials">
-        <li class="list__item footer__socials-item">
-          <a href="#" class="list__item-link footer__socials-item-link footer__socials-item-link--fb">
-            <span class="visually-hidden">Facebook</span>
-            <img src="img/icon-fb.svg" width="9" height="16" alt="Facebook">
-          </a>
-        </li>
-        <li class="list__item footer__socials-item">
-          <a href="#" class="list__item-link footer__socials-item-link footer__socials-item-link--ig">
-            <span class="visually-hidden">Instagram</span>
-            <img src="img/icon-ig.svg" width="16" height="16" alt="Instagram">
-          </a>
-        </li>
-        <li class="list__item footer__socials-item">
-          <a href="#" class="list__item-link footer__socials-item-link footer__socials-item-link--tw">
-            <span class="visually-hidden">Twitter</span>
-            <img src="img/icon-tw.svg" width="16" height="13" alt="Facebook">
-          </a>
-        </li>
-        <li class="list__item footer__socials-item">
-          <a href="#" class="list__item-link footer__socials-item-link footer__socials-item-link--yt">
-            <span class="visually-hidden">Youtube</span>
-            <img src="img/icon-yt.svg" width="16" height="13" alt="Youtube">
-          </a>
-        </li>
-      </ul>
     </footer>
   </div>
-  <section class="login visually-hidden">
+  <div class="login visually-hidden">
     <h2 class="visually-hidden">Вход в личный кабинет</h2>
     <div class="login__wrapper">
       <img src="img/logo-login.svg" width="151" height="31" alt="Лига Банк">
@@ -362,7 +372,7 @@
       </div>
       <button type="submit" class="button button--submit">Войти</button>
     </form>
-  </section>
+  </div>
   <div class="non-less visually-hidden">
     <h2>Наш банк не выдаёт ипотечные кредиты меньше 200 000 рублей.</h2>
     <p>Попробуйте использовать другие параметры для расчёта.</p>
