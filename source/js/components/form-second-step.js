@@ -47,7 +47,6 @@ const changeSum = (direction = `plus`) => {
 const setSumInputHandler = () => {
   mortgageSum.addEventListener(`change`, (evt) => {
     evt.preventDefault();
-    console.log(mortgageSum.value);
 
     if(mortgageSum.value.indexOf(currency) !== -1) {
       mortgageSum.value = `${mortgageSum.value.toLocaleString(`ru`)}`;
