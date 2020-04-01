@@ -6,7 +6,12 @@ import {setLoginFormHandlers} from "./components/login-form";
 import {setHeaderLinksHandlers} from "./components/header-links";
 
 import {setSelectHandler} from "./components/form";
-import {setSumInputHandler, setPercentInputHandlers} from "./components/form-second-step";
+import {
+  setSumInputHandler,
+  setPercentInputHandlers,
+  setYearsInputHandler,
+  makeOffer
+} from "./components/form-second-step";
 
 import smoothscroll from 'smoothscroll-polyfill';
 
@@ -19,5 +24,7 @@ setHeaderLinksHandlers();
 setSelectHandler();
 setSumInputHandler();
 setPercentInputHandlers();
+setYearsInputHandler();
+makeOffer();
 
 smoothscroll.polyfill();

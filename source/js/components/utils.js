@@ -35,7 +35,7 @@ const utils = {
   setPercent: (to, from) => {
     const value = utils.inputSumToInteger(from);
     const currency = utils.getCurrency(from);
-    const percent = value * 0.1;
+    const percent = Math.round(value * 0.1);
 
     to.value = `${percent.toLocaleString(`ru`)} ${currency}`;
   },

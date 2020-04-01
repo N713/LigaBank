@@ -174,10 +174,8 @@
                     <span class="visually-hidden">Минус</span>
                   </button>
                   <input type="text" value="2 500 000 рублей" name="price"
-                         id="property-price" data-price-step="100000"
-                         min="1 200 000" max="25 000 000"
-                         minlength="16" maxlength="17" step="100 000"
-                         required>
+                         id="property-price" min="1 200 000" max="25 000 000"
+                         minlength="16" maxlength="17" step="100 000" required>
                   <button type="button" class="form__plus-button">
                     <span class="visually-hidden">Плюс</span>
                   </button>
@@ -198,10 +196,10 @@
               <div class="form__year-wrapper range">
                 <label for="initial-payment">Первоначальный взнос</label>
                 <input type="text" value="5 лет" name="years"
-                       id="years" required>
+                       id="years" min="5" max="30" required>
                 <input type="range" name="years-range" id="years-range"
                        min="5" max="30" step="1" list="yearsmarks" value="5"
-                       data-min="5 лет" data-max="30 лет">
+                       minlength="5" maxlength="6" data-min="5 лет" data-max="30 лет">
                 <datalist id=yearsmarks>
                   <option value="5" label="5 лет">
                   <option value="30" label="30 лет">
@@ -216,19 +214,19 @@
           <div class="form__offer visually-hidden">
             <h3>Наше предложение</h3>
             <div class="form__offer-wrapper-outer">
-              <div class="form__offer-wrapper">
+              <div class="form__offer-wrapper form__offer-wrapper--sum">
                 <h4>1 330 000 рублей</h4>
                 <span>Сумма ипотеки</span>
               </div>
-              <div class="form__offer-wrapper">
+              <div class="form__offer-wrapper form__offer-wrapper--percent">
                 <h4>9,40%</h4>
                 <span>Процентная ставка</span>
               </div>
-              <div class="form__offer-wrapper">
+              <div class="form__offer-wrapper form__offer-wrapper--monthly">
                 <h4>27 868 рублей</h4>
                 <span>Ежемесячный платеж</span>
               </div>
-              <div class="form__offer-wrapper">
+              <div class="form__offer-wrapper form__offer-wrapper--need">
                 <h4>61 929 рублей</h4>
                 <span>Необходимый доход</span>
               </div>
