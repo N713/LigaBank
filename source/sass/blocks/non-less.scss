@@ -1,11 +1,12 @@
 .non-less {
   display: flex;
   flex-direction: column;
+  align-self: flex-start;
   background-color: $lightBlueColor;
   box-sizing: border-box;
   width: 500px;
   padding: 60px 58px;
-  margin: 10px auto;
+  margin-left: auto;
 }
 
 .non-less h2,
