@@ -13,8 +13,6 @@ const utils = {
   },
 
   getCurrency: (sumInput) => {
-    utils.setCurrency(sumInput);
-
     const splitValue = sumInput.value.split(` `);
     return splitValue[splitValue.length - 1];
   },

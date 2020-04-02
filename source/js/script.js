@@ -1,4 +1,4 @@
-import {mySwiper, setSliderLinksHandlers} from "./components/sliders/slider";
+import {setSliderLinksHandlers} from "./components/sliders/slider";
 import {tabletSwiper} from "./components/sliders/services-slider";
 import {setHandlers} from "./components/sliders/services";
 import {setPopupHandlers} from "./components/login/login-popup";

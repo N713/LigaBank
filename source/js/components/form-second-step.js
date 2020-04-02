@@ -9,6 +9,7 @@ import {yearsRangeInput} from "./inputs/input-years-range";
 
 const MOTHER_MONEY = 470000;
 const LIMIT = 500000;
+const MONTHS_IN_YEARS = 12;
 const YEARS = `лет`;
 
 const mortgageSum = document.body.querySelector(`.form .form__price-wrapper-second input`);
@@ -37,9 +38,11 @@ const makeOffer = () => {
     makeOffer();
   });
 
+  const fifteenPercent = utils.inputSumToInteger(mortgageSum) * 0.15;
   const mortgage = utils.inputSumToInteger(mortgageSum);
   const initial = utils.inputSumToInteger(initialPayment);
   let sum = mortgage - initial;
+  let percentRate = 0.094;
 
   if (isMotherMoneyUsed.checked) {
     sum = sum - MOTHER_MONEY;
@@ -53,7 +56,24 @@ const makeOffer = () => {
     offer.style.display = `block`;
   }
 
-  offerSum.textContent = `${sum} ${ROUBLES}`;
+  if (utils.inputSumToInteger(initialPayment) >= fifteenPercent) {
+    offerPercent.textContent = `8,50%`;
+    percentRate = 0.085;
+  } else {
+    offerPercent.textContent = `9,40%`;
+  }
+
+  const monthlyPercentRate = percentRate / MONTHS_IN_YEARS;
+  const numberOfPeriods = utils.inputSumToInteger(yearsInput) * MONTHS_IN_YEARS;
+  const divider = Math.pow(1 + monthlyPercentRate, numberOfPeriods) - 1;
+  const division = monthlyPercentRate / divider;
+  const multiplier = monthlyPercentRate + division;
+  const monthSum = Number((sum * multiplier).toFixed(0));
+  const neededPay = Number((monthSum * 100 / 45).toFixed(0));
+
+  offerSum.textContent = `${sum.toLocaleString(`ru`)} ${ROUBLES}`;
+  offerMonth.textContent = `${monthSum.toLocaleString(`ru`)} ${ROUBLES}`;
+  offerNeed.textContent = `${neededPay.toLocaleString(`ru`)} ${ROUBLES}`;
 };
 
 const mortgageSumInput = new sumInput(mortgageSum, initialPayment, mortgageSumPlus, mortgageSumMinus, ROUBLES, makeOffer);
