@@ -1,17 +1,12 @@
-import {mySwiper, setSliderLinksHandlers} from "./components/slider";
-import {tabletSwiper} from "./components/services-slider";
-import {setHandlers} from "./components/services";
-import {setPopupHandlers} from "./components/login-popup";
-import {setLoginFormHandlers} from "./components/login-form";
+import {mySwiper, setSliderLinksHandlers} from "./components/sliders/slider";
+import {tabletSwiper} from "./components/sliders/services-slider";
+import {setHandlers} from "./components/sliders/services";
+import {setPopupHandlers} from "./components/login/login-popup";
+import {setLoginFormHandlers} from "./components/login/login-form";
 import {setHeaderLinksHandlers} from "./components/header-links";
 
 import {setSelectHandler} from "./components/form";
-import {
-  setSumInputHandler,
-  setPercentInputHandlers,
-  setYearsInputHandler,
-  makeOffer
-} from "./components/form-second-step";
+import {setFormHandlers, makeOffer} from "./components/form-second-step";
 
 import smoothscroll from 'smoothscroll-polyfill';
 
@@ -22,9 +17,9 @@ setSliderLinksHandlers();
 setHeaderLinksHandlers();
 
 setSelectHandler();
-setSumInputHandler();
-setPercentInputHandlers();
-setYearsInputHandler();
+
+setFormHandlers();
+
 makeOffer();
 
 smoothscroll.polyfill();
