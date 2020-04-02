@@ -4,6 +4,39 @@ const ROUBLES = `рублей`;
 const REG = /\s+/g;
 
 const utils = {
+  Position: {
+    AFTERBEGIN: `afterbegin`,
+    BEFOREEND: `beforeend`,
+  },
+
+  getCheckbox: (template) => {
+    const newElement = document.createElement(`div`);
+    newElement.innerHTML = template;
+    return newElement.firstElementChild;
+  },
+
+  render: (container, element, place) => {
+    switch (place) {
+      case utils.Position.AFTERBEGIN:
+        container.prepend(element);
+        break;
+      case utils.Position.BEFOREEND:
+        container.append(element);
+        break;
+    }
+  },
+
+  remove: (element) => {
+    if (element) {
+      element.remove();
+    }
+  },
+
+  appendCheckbox: (parent, template) => {
+    const checkbox = utils.getCheckbox(template);
+    utils.render(parent, checkbox, utils.Position.BEFOREEND);
+  },
+
   setCurrency: (sumInput) => {
     if (sumInput.value.indexOf(ROUBLES) !== -1) {
       sumInput.value = `${sumInput.value.toLocaleString(`ru`)}`;
@@ -70,6 +103,7 @@ const utils = {
       input.value = `${sum.toLocaleString(`ru`)} ${currency}`;
     }
   },
+
 };
 
 export {utils, REG, ROUBLES};

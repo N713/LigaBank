@@ -52,8 +52,6 @@ export class sumInput {
       sum = sum - step;
       this._input.value = `${sum.toLocaleString(`ru`)} ${this._currency}`;
     }
-
-    console.log(sum);
   }
 
   setHandlers() {

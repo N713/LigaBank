@@ -2,6 +2,7 @@
 
 import {ROUBLES, utils} from "./utils";
 import {setFormHandlers} from "./form-second-step";
+import {appendMortgageCheckbox, appendInsuranceCheckboxes, appendSalaryCheckbox} from "./inputs/input-checkbox";
 
 const select = document.body.querySelector(`.form .form__first-step select`);
 const secondStep = document.body.querySelector(`.form .form__second-step`);
@@ -115,6 +116,8 @@ const setSelectHandler = () => {
         yearsRange.setAttribute(`data-max`, maxYears.home + ` лет`);
         percentRange.setAttribute(`step`, maxYears.car);
 
+        appendMortgageCheckbox();
+
         break;
 
       case selectValues.car:
@@ -138,6 +141,8 @@ const setSelectHandler = () => {
         yearsRange.setAttribute(`data-max`, maxYears.car + ` лет`);
         percentRange.setAttribute(`step`, maxYears.car);
 
+        appendInsuranceCheckboxes();
+
         break;
 
       case selectValues.cash:
@@ -160,6 +165,8 @@ const setSelectHandler = () => {
         yearsRange.setAttribute(`data-min`, minYears.car + ` лет`);
         yearsRange.setAttribute(`data-max`, maxYears.cash + ` лет`);
         percentRange.setAttribute(`step`, minYears.car);
+
+        appendSalaryCheckbox();
 
         break;
     }
