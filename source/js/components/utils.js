@@ -30,12 +30,45 @@ const utils = {
     }
   },
 
-  setPercent: (to, from) => {
+  setPercent: (to, from, number) => {
     const value = utils.inputSumToInteger(from);
     const currency = utils.getCurrency(from);
-    const percent = Math.round(value * 0.1);
+    const percent = Math.round(value * number);
 
     to.value = `${percent.toLocaleString(`ru`)} ${currency}`;
+  },
+
+  getIntegerValue(input, value) {
+    return Number(input.getAttribute(`${value}`).replace(REG,''));
+  },
+
+  changeSum(direction = `plus`, input, buttonPlus, buttonMinus, currency) {
+    let sum = utils.inputSumToInteger(input);
+    let min = this.getIntegerValue(input, `min`);
+    let max = this.getIntegerValue(input, `max`);
+    let step = this.getIntegerValue(input, `step`);
+
+    if (sum <= min + step) {
+      buttonMinus.setAttribute(`disabled`, ``);
+    } else {
+      buttonMinus.removeAttribute(`disabled`);
+    }
+
+    if (sum >= max - step) {
+      buttonPlus.setAttribute(`disabled`, ``);
+    } else {
+      buttonPlus.removeAttribute(`disabled`);
+    }
+
+    if (direction === `plus`) {
+      sum = sum + step;
+      input.value = `${sum.toLocaleString(`ru`)} ${currency}`;
+    }
+
+    if (direction === `minus`) {
+      sum = sum - step;
+      input.value = `${sum.toLocaleString(`ru`)} ${currency}`;
+    }
   },
 };
 

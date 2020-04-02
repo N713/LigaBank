@@ -22,8 +22,8 @@ export class percentRange {
       const part = Number(this._input.value) / 100;
       const mortgage = utils.inputSumToInteger(this._boundedInput);
       const initialPay = Math.round(part * mortgage);
-      this._percentInput.value = `${initialPay.toLocaleString(`ru`)} ${this._currency}`;
 
+      this._percentInput.value = `${initialPay.toLocaleString(`ru`)} ${this._currency}`;
       this._offerFunction();
     });
   }

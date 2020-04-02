@@ -5,19 +5,17 @@ import {setPopupHandlers} from "./components/login/login-popup";
 import {setLoginFormHandlers} from "./components/login/login-form";
 import {setHeaderLinksHandlers} from "./components/header-links";
 
-import {setSelectHandler} from "./components/form";
-import {setFormHandlers, makeOffer} from "./components/form-second-step";
+import {setSelectHandler, setFormHandlers} from "./components/form";
+import {makeOffer} from "./components/form-second-step";
 
 import smoothscroll from 'smoothscroll-polyfill';
 
-setHandlers();
 setPopupHandlers();
 setLoginFormHandlers();
 setSliderLinksHandlers();
 setHeaderLinksHandlers();
 
 setSelectHandler();
-
 setFormHandlers();
 
 makeOffer();

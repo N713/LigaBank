@@ -4,12 +4,13 @@ import IMask from "imask";
 import {utils, REG} from "../utils";
 
 export class sumInput {
-  constructor(input, boundedInput, buttonPlus, buttonMinus, currency, offerFunction) {
+  constructor(input, boundedInput, rangeBoundedInput, buttonPlus, buttonMinus, currency, offerFunction) {
     this._input = input;
     this._buttonPlus = buttonPlus;
     this._buttonMinus = buttonMinus;
     this._currency = currency;
     this._boundedInput = boundedInput;
+    this._rangeBoundedInput = rangeBoundedInput;
     this._offerFunction = offerFunction;
     this._inputMask = IMask(this._input, {
       mask: `0[0] 000 000 ${this._currency}`
@@ -51,10 +52,13 @@ export class sumInput {
       sum = sum - step;
       this._input.value = `${sum.toLocaleString(`ru`)} ${this._currency}`;
     }
+
+    console.log(sum);
   }
 
   setHandlers() {
-    utils.setPercent(this._boundedInput, this._input);
+    const currentPercent = Number(this._rangeBoundedInput.getAttribute(`min`)) / 100;
+    utils.setPercent(this._boundedInput, this._input, currentPercent);
 
     this._input.addEventListener(`input`, () => {
       this._inputMask.mask = `0[0] 000 000 ${this._currency}`;
@@ -77,7 +81,7 @@ export class sumInput {
         this._input.value = `${sum} ${this._currency}`;
       }
 
-      utils.setPercent(this._boundedInput, this._input);
+      utils.setPercent(this._boundedInput, this._input, currentPercent);
       this._offerFunction();
     });
 
@@ -85,7 +89,7 @@ export class sumInput {
       evt.preventDefault();
 
       this.changeSum();
-      utils.setPercent(this._boundedInput, this._input);
+      utils.setPercent(this._boundedInput, this._input, currentPercent);
       this._offerFunction();
     });
 
@@ -93,7 +97,7 @@ export class sumInput {
       evt.preventDefault();
 
       this.changeSum(`minus`);
-      utils.setPercent(this._boundedInput, this._input);
+      utils.setPercent(this._boundedInput, this._input, currentPercent);
       this._offerFunction();
     });
   }

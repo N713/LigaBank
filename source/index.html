@@ -171,21 +171,21 @@
                 <label for="property-price">Стоимость недвижимости</label>
                 <div class="form__price-wrapper-second">
                   <button type="button" class="form__minus-button">
-                    <span class="visually-hidden">Минус</span>
+                    <p class="visually-hidden">Минус</p>
                   </button>
                   <input type="text" value="2 500 000 рублей" name="price"
-                         id="property-price" min="1 200 000" max="25 000 000"
+                         id="property-price" min="1 200 000" max="25000000"
                          minlength="16" maxlength="17" step="100 000" required>
                   <button type="button" class="form__plus-button">
-                    <span class="visually-hidden">Плюс</span>
+                    <p class="visually-hidden">Плюс</p>
                   </button>
                 </div>
                 <span>От 1 200 000 до 25 000 000 рублей</span>
               </div>
               <div class="form__initial-payment-wrapper range">
                 <label for="initial-payment">Первоначальный взнос</label>
-                <input type="text" value="200 000 рублей" name="initial-pay"
-                       id="initial-payment" required>
+                <input type="text" value="0" name="initial-pay"
+                       id="initial-payment" min="0" required>
                 <input type="range" name="initial-percent" id="initial-percent"
                        min="10" max="100" step="5" list="marks" value="10"
                        data-min="10%">

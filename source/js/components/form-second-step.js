@@ -76,7 +76,7 @@ const makeOffer = () => {
   offerNeed.textContent = `${neededPay.toLocaleString(`ru`)} ${ROUBLES}`;
 };
 
-const mortgageSumInput = new sumInput(mortgageSum, initialPayment, mortgageSumPlus, mortgageSumMinus, ROUBLES, makeOffer);
+const mortgageSumInput = new sumInput(mortgageSum, initialPayment, initialPaymentRange, mortgageSumPlus, mortgageSumMinus, ROUBLES, makeOffer);
 const initialPayInput = new inputInitialPay(initialPayment, ROUBLES, mortgageSum, initialPaymentRange, makeOffer);
 const yearsSumInput = new yearsInputSum(yearsInput, makeOffer, YEARS, yearsRange);
 const initialRange = new percentRange(initialPaymentRange, ROUBLES, makeOffer, mortgageSum, initialPayment);
@@ -90,4 +90,8 @@ const setFormHandlers = () => {
   initialRange.init();
 };
 
-export {setFormHandlers, makeOffer};
+const resetFormHandlers = () => {
+  mortgageSumInput.resetHandlers();
+};
+
+export {setFormHandlers, makeOffer, resetFormHandlers};
