@@ -1,7 +1,7 @@
 'use strict';
 
 import {ROUBLES, utils} from "./utils";
-import {setFormHandlers} from "./form-second-step";
+import {setFormHandlers, makeOffer} from "./form-second-step";
 import {appendMortgageCheckbox, appendInsuranceCheckboxes, appendSalaryCheckbox} from "./inputs/input-checkbox";
 
 const select = document.body.querySelector(`.form .form__first-step select`);
@@ -117,6 +117,7 @@ const setSelectHandler = () => {
         percentRange.setAttribute(`step`, maxYears.car);
 
         appendMortgageCheckbox();
+        makeOffer();
 
         break;
 
@@ -142,6 +143,7 @@ const setSelectHandler = () => {
         percentRange.setAttribute(`step`, maxYears.car);
 
         appendInsuranceCheckboxes();
+        makeOffer();
 
         break;
 
@@ -167,6 +169,7 @@ const setSelectHandler = () => {
         percentRange.setAttribute(`step`, minYears.car);
 
         appendSalaryCheckbox();
+        makeOffer();
 
         break;
     }

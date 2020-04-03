@@ -17,6 +17,7 @@ setHeaderLinksHandlers();
 
 setSelectHandler();
 setFormHandlers();
+setHandlers();
 
 makeOffer();
 

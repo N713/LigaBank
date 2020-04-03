@@ -1,6 +1,7 @@
 'use strict';
 
 import {utils} from "../utils";
+import {makeOffer} from "../form-second-step";
 
 const checkboxParent = document.body.querySelector(`.form .form__second-step`);
 
@@ -31,20 +32,31 @@ const removeCheckboxes = () => {
   });
 };
 
+const addCheckboxesListeners = (handler) => {
+  const checkboxes = Array.from(document.body.querySelectorAll(`.form .form__checkbox-wrapper`));
+
+  checkboxes.forEach((it) => {
+    it.addEventListener(`change`, handler);
+  });
+};
+
 const appendMortgageCheckbox = () => {
   removeCheckboxes();
   utils.appendCheckbox(checkboxParent, mortgageCheckbox);
+  addCheckboxesListeners(makeOffer);
 };
 
 const appendInsuranceCheckboxes = () => {
   removeCheckboxes();
   utils.appendCheckbox(checkboxParent, carInsuranceCheckbox);
   utils.appendCheckbox(checkboxParent, lifeInsurance);
+  addCheckboxesListeners(makeOffer);
 };
 
 const appendSalaryCheckbox = () => {
   removeCheckboxes();
   utils.appendCheckbox(checkboxParent, salaryProject);
+  addCheckboxesListeners(makeOffer);
 };
 
 export {appendMortgageCheckbox, appendInsuranceCheckboxes, appendSalaryCheckbox};

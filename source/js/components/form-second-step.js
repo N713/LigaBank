@@ -7,8 +7,6 @@ import {yearsInputSum} from "./inputs/input-years";
 import {percentRange} from "./inputs/input-initial-percent";
 import {yearsRangeInput} from "./inputs/input-years-range";
 
-const MOTHER_MONEY = 470000;
-const LIMIT = 500000;
 const MONTHS_IN_YEARS = 12;
 const YEARS = `лет`;
 
@@ -22,8 +20,6 @@ const initialPaymentRange = document.body.querySelector(`.form .form__initial-pa
 const yearsInput = document.body.querySelector(`.form .form__year-wrapper #years`);
 const yearsRange = document.body.querySelector(`.form .form__year-wrapper #years-range`);
 
-const isMotherMoneyUsed = document.body.querySelector(`.form .form__checkbox-wrapper #mother-money`);
-
 const offer = document.body.querySelector(`.form .form__offer`);
 const nonLess = document.body.querySelector(`.form .form__wrapper .non-less`);
 let offerSum = offer.querySelector(`.form .form__offer-wrapper--sum h4`);
@@ -32,38 +28,101 @@ let offerMonth = offer.querySelector(`.form .form__offer-wrapper--monthly h4`);
 let offerNeed = offer.querySelector(`.form .form__offer-wrapper--need h4`);
 
 const makeOffer = () => {
-  isMotherMoneyUsed.addEventListener(`change`, (evt) => {
-    evt.preventDefault();
+  const motherMoneyCheckbox = document.body.querySelector(`.form .form__checkbox-wrapper #mother-money`);
+  const carInsuranceCheckbox = document.body.querySelector(`.form .form__checkbox-wrapper #car-insurance`);
+  const lifeInsuranceCheckbox = document.body.querySelector(`.form .form__checkbox-wrapper #life-insurance`);
+  const salaryProjectCheckbox = document.body.querySelector(`.form .form__checkbox-wrapper #salary-project`);
 
-    makeOffer();
-  });
+  const creditSum = utils.inputSumToInteger(mortgageSum);
+  const initialPay = utils.inputSumToInteger(initialPayment);
+  let sum = creditSum - initialPay;
+  let percent = 9.4;
 
-  const fifteenPercent = utils.inputSumToInteger(mortgageSum) * 0.15;
-  const mortgage = utils.inputSumToInteger(mortgageSum);
-  const initial = utils.inputSumToInteger(initialPayment);
-  let sum = mortgage - initial;
-  let percentRate = 0.094;
+  if (motherMoneyCheckbox && !carInsuranceCheckbox && !lifeInsuranceCheckbox && !salaryProjectCheckbox) {
+    const percentLimit = creditSum * 0.15;
+    const creditLimit = 500000;
+    const motherMoney = 470000;
 
-  if (isMotherMoneyUsed.checked) {
-    sum = sum - MOTHER_MONEY;
+    if (motherMoneyCheckbox.checked) {
+      sum = sum - motherMoney;
+    }
+
+    if (sum < creditLimit) {
+      nonLess.classList.remove(`visually-hidden`);
+      offer.style.display = `none`;
+    } else {
+      nonLess.classList.add(`visually-hidden`);
+      offer.style.display = `block`;
+    }
+
+    if (initialPay > percentLimit) {
+      percent = 8.5;
+      offerPercent.textContent = `8,50%`;
+    } else {
+      percent = 9.5;
+      offerPercent.textContent = `9,40%`;
+    }
   }
 
-  if (sum < LIMIT) {
-    nonLess.classList.remove(`visually-hidden`);
-    offer.style.display = `none`;
-  } else {
-    nonLess.classList.add(`visually-hidden`);
-    offer.style.display = `block`;
+  if (carInsuranceCheckbox && lifeInsuranceCheckbox && !motherMoneyCheckbox && !salaryProjectCheckbox) {
+    const creditLimit = 200000;
+    const sumLimit = 2000000;
+    percent = 16;
+    offerPercent.textContent = `16%`;
+
+    if (creditSum > sumLimit) {
+      percent = 15;
+      offerPercent.textContent = `15%`;
+    }
+
+    if (carInsuranceCheckbox.checked || lifeInsuranceCheckbox.checked) {
+      percent = 8.5;
+      offerPercent.textContent = `8,50%`;
+    }
+
+    if (carInsuranceCheckbox.checked && lifeInsuranceCheckbox.checked) {
+      percent = 3.5;
+      offerPercent.textContent = `3,50%`;
+    }
+
+    if (sum < creditLimit) {
+      nonLess.classList.remove(`visually-hidden`);
+      offer.style.display = `none`;
+    } else {
+      nonLess.classList.add(`visually-hidden`);
+      offer.style.display = `block`;
+    }
   }
 
-  if (utils.inputSumToInteger(initialPayment) >= fifteenPercent) {
-    offerPercent.textContent = `8,50%`;
-    percentRate = 0.085;
-  } else {
-    offerPercent.textContent = `9,40%`;
+  if (salaryProjectCheckbox && !motherMoneyCheckbox && !carInsuranceCheckbox && !lifeInsuranceCheckbox) {
+    const sumLowLimit = 750000;
+    const sumHighLimit = 2000000;
+
+    if (creditSum < sumLowLimit) {
+      percent = 15;
+      offerPercent.textContent = `15%`;
+    }
+
+    if (creditSum > sumLowLimit && creditSum < sumHighLimit) {
+      percent = 12.5;
+      offerPercent.textContent = `12,5%`;
+    }
+
+    if (creditSum >= sumHighLimit) {
+      percent = 9.5;
+      offerPercent.textContent = `9,5%`;
+    }
+
+    if (salaryProjectCheckbox.checked) {
+      percent = percent - 0.5;
+
+      const split = `${percent}`.split(`.`);
+      const stringPercent = split.join(`,`) + `%`;
+      offerPercent.textContent = `${stringPercent}`;
+    }
   }
 
-  const monthlyPercentRate = percentRate / MONTHS_IN_YEARS;
+  const monthlyPercentRate = (percent / 100) / MONTHS_IN_YEARS;
   const numberOfPeriods = utils.inputSumToInteger(yearsInput) * MONTHS_IN_YEARS;
   const divider = Math.pow(1 + monthlyPercentRate, numberOfPeriods) - 1;
   const division = monthlyPercentRate / divider;
@@ -90,8 +149,4 @@ const setFormHandlers = () => {
   initialRange.init();
 };
 
-const resetFormHandlers = () => {
-  mortgageSumInput.resetHandlers();
-};
-
-export {setFormHandlers, makeOffer, resetFormHandlers};
+export {setFormHandlers, makeOffer};
