@@ -1,6 +1,6 @@
 'use strict';
 
-import {utils} from "../utils";
+import {utils} from "./utils";
 
 export class percentRange {
   constructor(input, currency, offerFunction, boundedInput, percentInput) {

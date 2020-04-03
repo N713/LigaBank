@@ -1,7 +1,7 @@
 'use strict';
 
 import IMask from "imask";
-import {utils} from "../utils";
+import {utils} from "./utils";
 
 export class yearsInputSum {
   constructor(input, offerFunction, years, rangeInput) {

@@ -1,8 +1,8 @@
-import {setSliderLinksHandlers} from "./components/sliders/slider";
-import {tabletSwiper} from "./components/sliders/services-slider";
-import {setHandlers} from "./components/sliders/services";
-import {setPopupHandlers} from "./components/login/login-popup";
-import {setLoginFormHandlers} from "./components/login/login-form";
+import {setSliderLinksHandlers} from "./components/slider";
+import {tabletSwiper} from "./components/services-slider";
+import {setHandlers} from "./components/services";
+import {setPopupHandlers} from "./components/login-popup";
+import {setLoginFormHandlers} from "./components/login-form";
 import {setHeaderLinksHandlers} from "./components/header-links";
 
 import {setSelectHandler, setFormHandlers} from "./components/form";
@@ -18,7 +18,6 @@ setHeaderLinksHandlers();
 setSelectHandler();
 setFormHandlers();
 setHandlers();
-
 makeOffer();
 
 smoothscroll.polyfill();

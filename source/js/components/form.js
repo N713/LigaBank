@@ -2,7 +2,7 @@
 
 import {ROUBLES, utils} from "./utils";
 import {setFormHandlers, makeOffer} from "./form-second-step";
-import {appendMortgageCheckbox, appendInsuranceCheckboxes, appendSalaryCheckbox} from "./inputs/input-checkbox";
+import {appendMortgageCheckbox, appendInsuranceCheckboxes, appendSalaryCheckbox} from "./input-checkbox";
 
 const select = document.body.querySelector(`.form .form__first-step select`);
 const secondStep = document.body.querySelector(`.form .form__second-step`);

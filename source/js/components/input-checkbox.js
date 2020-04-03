@@ -1,7 +1,7 @@
 'use strict';
 
-import {utils} from "../utils";
-import {makeOffer} from "../form-second-step";
+import {utils} from "./utils";
+import {makeOffer} from "./form-second-step";
 
 const checkboxParent = document.body.querySelector(`.form .form__second-step`);
 

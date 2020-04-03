@@ -1,7 +1,7 @@
 'use strict';
 
 import IMask from "imask";
-import {utils, REG} from "../utils";
+import {utils, REG} from "./utils";
 
 export class sumInput {
   constructor(input, boundedInput, rangeBoundedInput, buttonPlus, buttonMinus, currency, offerFunction) {

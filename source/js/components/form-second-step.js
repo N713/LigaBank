@@ -1,11 +1,11 @@
 'use strict';
 
 import {utils, ROUBLES} from "./utils";
-import {sumInput} from "./inputs/input-sum";
-import {inputInitialPay} from "./inputs/input-initial-pay";
-import {yearsInputSum} from "./inputs/input-years";
-import {percentRange} from "./inputs/input-initial-percent";
-import {yearsRangeInput} from "./inputs/input-years-range";
+import {sumInput} from "./input-sum";
+import {inputInitialPay} from "./input-initial-pay";
+import {yearsInputSum} from "./input-years";
+import {percentRange} from "./input-initial-percent";
+import {yearsRangeInput} from "./input-years-range";
 
 const MONTHS_IN_YEARS = 12;
 const YEARS = `лет`;
@@ -22,10 +22,21 @@ const yearsRange = document.body.querySelector(`.form .form__year-wrapper #years
 
 const offer = document.body.querySelector(`.form .form__offer`);
 const nonLess = document.body.querySelector(`.form .form__wrapper .non-less`);
+const nonLessText = nonLess.querySelector(`h2`);
+
 let offerSum = offer.querySelector(`.form .form__offer-wrapper--sum h4`);
 let offerPercent = offer.querySelector(`.form .form__offer-wrapper--percent h4`);
 let offerMonth = offer.querySelector(`.form .form__offer-wrapper--monthly h4`);
 let offerNeed = offer.querySelector(`.form .form__offer-wrapper--need h4`);
+let offerType = offer.querySelector(`.form .form__offer-wrapper--sum span`);
+
+const makeNonLessText = (credit, value) => {
+  return `Наш банк не выдаёт ${credit} кредиты меньше ${value} рублей.`;
+};
+
+const setOfferType = (credit) => {
+  return `Сумма ${credit}`;
+};
 
 const makeOffer = () => {
   const motherMoneyCheckbox = document.body.querySelector(`.form .form__checkbox-wrapper #mother-money`);
@@ -50,6 +61,7 @@ const makeOffer = () => {
     if (sum < creditLimit) {
       nonLess.classList.remove(`visually-hidden`);
       offer.style.display = `none`;
+      nonLessText.textContent = makeNonLessText(`ипотечные`, creditLimit);
     } else {
       nonLess.classList.add(`visually-hidden`);
       offer.style.display = `block`;
@@ -62,6 +74,8 @@ const makeOffer = () => {
       percent = 9.5;
       offerPercent.textContent = `9,40%`;
     }
+
+    offerType.textContent = setOfferType(`ипотеки`);
   }
 
   if (carInsuranceCheckbox && lifeInsuranceCheckbox && !motherMoneyCheckbox && !salaryProjectCheckbox) {
@@ -88,10 +102,13 @@ const makeOffer = () => {
     if (sum < creditLimit) {
       nonLess.classList.remove(`visually-hidden`);
       offer.style.display = `none`;
+      nonLessText.textContent = makeNonLessText(`автокредиты`, creditLimit);
     } else {
       nonLess.classList.add(`visually-hidden`);
       offer.style.display = `block`;
     }
+
+    offerType.textContent = setOfferType(`автокредита`);
   }
 
   if (salaryProjectCheckbox && !motherMoneyCheckbox && !carInsuranceCheckbox && !lifeInsuranceCheckbox) {
@@ -120,6 +137,8 @@ const makeOffer = () => {
       const stringPercent = split.join(`,`) + `%`;
       offerPercent.textContent = `${stringPercent}`;
     }
+
+    offerType.textContent = setOfferType(`кредита`) + ``;
   }
 
   const monthlyPercentRate = (percent / 100) / MONTHS_IN_YEARS;
