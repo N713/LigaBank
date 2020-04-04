@@ -56,6 +56,8 @@ const utils = {
   },
 
   addCurrencySubstr: (input, currency) => {
+    utils.setCurrency(input);
+
     if(input.value.indexOf(currency) !== -1) {
       input.value = `${input.value.toLocaleString(`ru`)}`;
     } else {

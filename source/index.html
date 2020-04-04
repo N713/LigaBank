@@ -152,7 +152,7 @@
         </ul>
         <div class="services__pagination swiper-pagination"></div>
       </section>
-      <form class="form" id="calculator">
+      <form class="form" id="calculator" method="post" action="index.html">
         <h2>Кредитный калькулятор</h2>
         <div class="form__wrapper">
           <div class="form__wrapper-second">
@@ -240,33 +240,37 @@
           <div class="form__third-step visually-hidden">
             <h3>Шаг 3. Оформление заявки</h3>
             <ul class="list form__list">
-              <li class="list__item form__list-item">
+              <li class="list__item form__list-item form__list-item--number">
                 <h4>№ 0010</h4>
                 <span>Номер заявки</span>
               </li>
-              <li class="list__item form__list-item">
+              <li class="list__item form__list-item form__list-item--goal">
                 <h4>Ипотека</h4>
                 <span>Цель кредита</span>
               </li>
-              <li class="list__item form__list-item">
+              <li class="list__item form__list-item form__list-item--sum">
+                <h4>Стоимость недвижимости</h4>
+                <span>2 000 000 рублей</span>
+              </li>
+              <li class="list__item form__list-item form__list-item--initial">
                 <h4>200 000 рублей</h4>
                 <span>Первоначальный взнос</span>
               </li>
-              <li class="list__item form__list-item">
+              <li class="list__item form__list-item form__list-item--years">
                 <h4>5 лет</h4>
                 <span>Срок кредитования</span>
               </li>
             </ul>
             <label class="visually-hidden" for="client-name">Фамилия, Имя, Отчество</label>
             <input type="text" name="client-name" id="client-name"
-                   placeholder="ФИО" required>
+                   placeholder="ФИО">
             <div class="form__third-step-wrapper">
               <label class="visually-hidden" for="number">Номер телефона</label>
               <input type="tel" name="client-tel" id="number" placeholder="Телефон"
-                     maxlength="18" data-mask="+7(000)000 00 00" required>
+                     maxlength="18" data-mask="+7(000) 000 00 00">
 
               <label class="visually-hidden" for="email">Номер телефона</label>
-              <input type="email" name="client-email" id="email" placeholder="email" required>
+              <input type="email" name="client-email" id="email" placeholder="email">
             </div>
             <button type="submit" form="calculator" class="button button--submit">Отправить</button>
           </div>

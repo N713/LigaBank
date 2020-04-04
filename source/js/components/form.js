@@ -93,6 +93,12 @@ const setSelectHandler = () => {
     switch (select.value) {
       case selectValues.not:
         hideWindows();
+
+        const requestField = document.body.querySelector(`.form .form__third-step`);
+        if (!requestField.classList.contains(`visually-hidden`)) {
+          requestField.classList.add(`visually-hidden`);
+        }
+
         break;
 
       case selectValues.home:

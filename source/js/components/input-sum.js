@@ -1,7 +1,7 @@
 'use strict';
 
 import IMask from "imask";
-import {utils, REG} from "./utils";
+import {utils, REG, ROUBLES} from "./utils";
 
 export class sumInput {
   constructor(input, boundedInput, rangeBoundedInput, buttonPlus, buttonMinus, currency, offerFunction) {
@@ -13,7 +13,7 @@ export class sumInput {
     this._rangeBoundedInput = rangeBoundedInput;
     this._offerFunction = offerFunction;
     this._inputMask = IMask(this._input, {
-      mask: `0[0] 000 000 ${this._currency}`
+      mask: `0[0] 000 000 {рублей}`,
     });
   }
 
@@ -59,7 +59,7 @@ export class sumInput {
     utils.setPercent(this._boundedInput, this._input, currentPercent);
 
     this._input.addEventListener(`input`, () => {
-      this._inputMask.mask = `0[0] 000 000 ${this._currency}`;
+      this._inputMask.mask = `00000000 {рублей}`;
       this._input.classList.remove(`error`);
       this._offerFunction();
     });
@@ -67,7 +67,8 @@ export class sumInput {
     this._input.addEventListener(`change`, (evt) => {
       evt.preventDefault();
 
-      utils.addCurrencySubstr(this._input, utils.getCurrency(this._input));
+      utils.addCurrencySubstr(this._input, this._currency);
+
       let min = this.getIntegerValue(`min`);
       let max = this.getIntegerValue(`max`);
       const sum = utils.inputSumToInteger(this._input);
@@ -76,7 +77,9 @@ export class sumInput {
         this._inputMask.mask = `Некорректное значение`;
         this._input.classList.add(`error`);
       } else {
-        this._input.value = `${sum} ${this._currency}`;
+        this._inputMask.updateValue();
+        this._inputMask.mask = `0[0] 000 000 рублей`;
+        this._input.value = `${sum.toLocaleString(`ru`)} ${this._currency}`;
       }
 
       utils.setPercent(this._boundedInput, this._input, currentPercent);
@@ -87,6 +90,7 @@ export class sumInput {
       evt.preventDefault();
 
       this.changeSum();
+      this._inputMask.updateValue();
       utils.setPercent(this._boundedInput, this._input, currentPercent);
       this._offerFunction();
     });
@@ -95,6 +99,7 @@ export class sumInput {
       evt.preventDefault();
 
       this.changeSum(`minus`);
+      this._inputMask.updateValue();
       utils.setPercent(this._boundedInput, this._input, currentPercent);
       this._offerFunction();
     });

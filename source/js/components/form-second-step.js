@@ -6,6 +6,7 @@ import {inputInitialPay} from "./input-initial-pay";
 import {yearsInputSum} from "./input-years";
 import {percentRange} from "./input-initial-percent";
 import {yearsRangeInput} from "./input-years-range";
+import {setRequestFields} from "./form-request";
 
 const MONTHS_IN_YEARS = 12;
 const YEARS = `лет`;
@@ -23,6 +24,7 @@ const yearsRange = document.body.querySelector(`.form .form__year-wrapper #years
 const offer = document.body.querySelector(`.form .form__offer`);
 const nonLess = document.body.querySelector(`.form .form__wrapper .non-less`);
 const nonLessText = nonLess.querySelector(`h2`);
+const makeRequestButton = offer.querySelector(`.button--make-request`);
 
 let offerSum = offer.querySelector(`.form .form__offer-wrapper--sum h4`);
 let offerPercent = offer.querySelector(`.form .form__offer-wrapper--percent h4`);
@@ -160,6 +162,7 @@ const yearsSumInput = new yearsInputSum(yearsInput, makeOffer, YEARS, yearsRange
 const initialRange = new percentRange(initialPaymentRange, ROUBLES, makeOffer, mortgageSum, initialPayment);
 const yearsInputRange = new yearsRangeInput(yearsRange, YEARS, makeOffer, yearsInput);
 
+
 const setFormHandlers = () => {
   mortgageSumInput.init();
   yearsInputRange.init();
@@ -167,5 +170,44 @@ const setFormHandlers = () => {
   yearsSumInput.init();
   initialRange.init();
 };
+
+makeRequestButton.addEventListener(`click`, (evt) => {
+  evt.preventDefault();
+
+  const select = document.body.querySelector(`.form .form__first-step select`);
+  const numberString = document.body.querySelector(`.form .form__third-step .form__list-item--number h4`);
+  const split = numberString.textContent.split(` `);
+  const number = `00${Number(split[split.length - 1]) + 1}`;
+
+  const goals = {
+    home: `Ипотека`,
+    car: `Автокредит`,
+    cash: `Кредит`,
+  };
+
+  const things = {
+    home: `недвижимости`,
+    car: `автомобиля`,
+    cash: `кредита`,
+  };
+
+  switch (select.value) {
+    case `mortgage`:
+      setRequestFields(number, goals.home, mortgageSum.value, initialPayment.value, yearsInput.value, things.home);
+
+      break;
+    case `carloan`:
+      setRequestFields(number, goals.car, mortgageSum.value, initialPayment.value, yearsInput.value, things.car);
+
+      break;
+    case `consumercredit`:
+      setRequestFields(number, goals.car, mortgageSum.value, initialPayment.value, yearsInput.value, things.cash);
+
+      break;
+  }
+
+  const requestField = document.body.querySelector(`.form .form__third-step`);
+  requestField.scrollIntoView({behavior: `smooth`});
+});
 
 export {setFormHandlers, makeOffer};
