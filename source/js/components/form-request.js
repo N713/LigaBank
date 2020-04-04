@@ -14,6 +14,7 @@ const nameInput = requestField.querySelector(`#client-name`);
 const emailInput = requestField.querySelector(`#email`);
 const telInput = requestField.querySelector(`#number`);
 const form = document.body.querySelector(`.main .form`);
+const callbackPopup = document.body.querySelector(`.callback`);
 
 const telMask = IMask(telInput, {
   mask: telInput.getAttribute(`data-mask`),
@@ -68,6 +69,9 @@ form.addEventListener(`submit`, (evt) => {
     localStorage.setItem(`sum`, sumField.textContent);
     localStorage.setItem(`initial`, initialField.textContent);
     localStorage.setItem(`years`, yearsField.textContent);
+
+    requestField.classList.add(`visually-hidden`);
+    callbackPopup.classList.remove(`visually-hidden`);
   }
 
   setTimeout(deleteShakeClass, 800);
