@@ -7,8 +7,9 @@
   background-color: $lightBlueColor;
   margin: 10px auto;
   position: fixed;
-  top: calc(50% - 85px);
+  top: calc(50% - 185px);
   left: calc(50% - 250px);
+  z-index: 10;
 }
 
 .callback button {
@@ -27,6 +28,7 @@
 }
 
 .callback p {
+  text-align: center;
   box-sizing: border-box;
   width: 293px;
   margin: 0 auto;

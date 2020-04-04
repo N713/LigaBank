@@ -201,7 +201,7 @@ makeRequestButton.addEventListener(`click`, (evt) => {
 
       break;
     case `consumercredit`:
-      setRequestFields(number, goals.car, mortgageSum.value, initialPayment.value, yearsInput.value, things.cash);
+      setRequestFields(number, goals.cash, mortgageSum.value, initialPayment.value, yearsInput.value, things.cash);
 
       break;
   }

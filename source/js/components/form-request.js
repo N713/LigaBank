@@ -1,6 +1,7 @@
 'use strict';
 
 import IMask from "imask";
+import {setCallbackPopupHandler} from "./callback-popup";
 
 const requestField = document.body.querySelector(`.form .form__third-step`);
 const numberField = requestField.querySelector(`.form__list-item--number h4`);
@@ -70,8 +71,21 @@ form.addEventListener(`submit`, (evt) => {
     localStorage.setItem(`initial`, initialField.textContent);
     localStorage.setItem(`years`, yearsField.textContent);
 
+    const select = document.body.querySelector(`.form .form__first-step select`);
+    const secondStep = document.body.querySelector(`.form .form__second-step`);
+    const offer = document.body.querySelector(`.form .form__offer`);
+    const container = document.body.querySelector(`.container`);
+
+    select.value = `non-selected`;
     requestField.classList.add(`visually-hidden`);
     callbackPopup.classList.remove(`visually-hidden`);
+    secondStep.classList.add(`visually-hidden`);
+    offer.classList.add(`visually-hidden`);
+
+    container.classList.add(`container--dark`);
+    document.body.classList.add(`body--dark`);
+
+    setCallbackPopupHandler();
   }
 
   setTimeout(deleteShakeClass, 800);
