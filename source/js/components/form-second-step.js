@@ -177,7 +177,7 @@ makeRequestButton.addEventListener(`click`, (evt) => {
   const select = document.body.querySelector(`.form .form__first-step select`);
   const numberString = document.body.querySelector(`.form .form__third-step .form__list-item--number h4`);
   const split = numberString.textContent.split(` `);
-  const number = `00${Number(split[split.length - 1]) + 1}`;
+  const number = `№ 00${Number(split[split.length - 1]) + 1}`;
 
   const goals = {
     home: `Ипотека`,

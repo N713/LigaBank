@@ -8,6 +8,19 @@
   <link rel="preload" href="fonts/robotomedium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
   <link rel="preload" href="fonts/robotobold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
   <link rel="stylesheet" href="css/style.min.css">
+  <!-- Pixel Glass -->
+  <style>
+    HTML {
+      background-repeat: no-repeat;
+      background-position:  50% 0;
+      /* По умолчанию показывается мобильный макет */
+      /*background-image: url( "img/desktop.jpg" );
+      opacity: 0.5;
+    }
+  </style>
+  <link href="../node_modules/pixel-glass/styles.css" rel="stylesheet">
+  <script src="../node_modules/pixel-glass/script.js"></script>
+  <!-- // Pixel Glass -->
   <script>
     document.createElement( "picture" );
     //По руководству автора - http://scottjehl.github.io/picturefill/
@@ -89,7 +102,7 @@
           </li>
         </ul>
         <ul class="list services__second-list swiper-wrapper">
-          <li class="list__item services__second-list-item swiper-slide">
+          <li class="list__item services__second-list-item services__second-list-item--piggy swiper-slide">
             <div class="services__second-list-item-wrapper">
               <h3>Вклады Лига Банка – это выгодная инвестиция в свое будущее</h3>
               <ul class="list services__sublist">
@@ -105,7 +118,7 @@
               <img src="img/piggybank@1x.png" width="440" height="290" alt="Копилка">
             </div>
           </li>
-          <li class="list__item services__second-list-item swiper-slide">
+          <li class="list__item services__second-list-item services__second-list-item--car swiper-slide">
             <div class="services__second-list-item-wrapper">
               <h3>Лига Банк выдает кредиты под любые цели</h3>
               <ul class="list services__sublist">
@@ -122,7 +135,7 @@
               <img src="img/car@1x.png" width="440" height="290" alt="Автомобиль">
             </div>
           </li>
-          <li class="list__item services__second-list-item swiper-slide">
+          <li class="list__item services__second-list-item services__second-list-item--lock swiper-slide">
             <div class="services__second-list-item-wrapper">
               <h3>Лига Страхование — застрахуем все что захотите</h3>
               <ul class="list services__sublist">
@@ -136,7 +149,7 @@
               <img src="img/lock@1x.png" width="440" height="290" alt="Замок">
             </div>
           </li>
-          <li class="list__item services__second-list-item swiper-slide">
+          <li class="list__item services__second-list-item services__second-list-item--phone swiper-slide">
             <div class="services__second-list-item-wrapper">
               <h3>Лига Банк — это огромное количество онлайн-сервисов для вашего удобствае</h3>
               <ul class="list services__sublist">
@@ -297,6 +310,12 @@
             const russia = document.getElementById(`russia`);
             const sng = document.getElementById(`sng`);
             const europe = document.getElementById(`europe`);
+            let map;
+
+            let opt = {
+              center: {lat: 54.037157, lng: 59.967874},
+              zoom: 3.75
+            };
 
             const russiaLocations = [
               [`Москва`, 55.752696, 37.591423],
@@ -338,22 +357,15 @@
               });
             }
 
-            let map;
+            [russia, sng, europe].forEach((checkbox) => {
+              checkbox.addEventListener(`change`, (evt) => {
+                evt.preventDefault();
+
+                initMap();
+              });
+            });
 
             function initMap() {
-              let opt = {
-                center: {lat: 58.037157, lng: 59.967874},
-                zoom: 3.5
-              };
-
-              [russia, sng, europe].forEach((checkbox) => {
-                checkbox.addEventListener(`change`, (evt) => {
-                  evt.preventDefault();
-
-                  initMap();
-                });
-              });
-
               map = new google.maps.Map(document.getElementById('map'), opt);
 
               if (russia.checked) {

@@ -6,11 +6,15 @@
 .services {
   padding-top: 60px;
   overflow-x: hidden;
+  max-width: 1172px;
+  margin: 0 auto;
 }
 
 .services__list {
   display: flex;
   flex-wrap: nowrap;
+  max-width: 1170px;
+  margin: 0 auto;
 }
 
 .services__list-item {
@@ -92,7 +96,7 @@
   background-image: url("../img/icon-cellphone.svg");
   background-repeat: no-repeat;
   background-position: center center;
-  margin-right: 10px;
+  margin-right: 3px;
 }
 
 .services__second-list {
@@ -110,6 +114,13 @@
   justify-content: space-between;
   background-color: $lightBlueColor;
   padding: 60px 70px;
+  padding-top: 54px;
+}
+
+.services__second-list-item--car,
+.services__second-list-item--lock,
+.services__second-list-item--phone {
+  padding-bottom: 67px;
 }
 
 .services__second-list-item h3 {
@@ -146,6 +157,9 @@
 .services__image-wrapper {
   width: 440px;
   overflow: hidden;
+  margin-right: 6.2%;
+  position: relative;
+  top: 5px;
 }
 
 .services__image-wrapper img {
@@ -153,16 +167,55 @@
   width: 100%;
 }
 
+.services__second-list-item--car h3 {
+  width: 325px;
+}
+
+.services__second-list-item--car p {
+  @include reset;
+
+  margin-top: 27px;
+}
+
+.services__second-list-item--lock h3 {
+  width: 350px;
+}
+
+.services__second-list-item--lock img {
+  position: relative;
+  top: -7px;
+}
+
+.services__second-list-item--phone h3 {
+  width: 425px;
+}
+
+.services__second-list-item--phone img {
+  position: relative;
+  top: -5px;
+}
+
+.services__second-list-item--phone .services__sublist-item:first-of-type {
+  width: 225px;
+}
+
+.services__second-list-item--phone .services__sublist-item:last-of-type {
+  width: 340px;
+}
+
+
+
 .services__sublist {
   @include reset;
-  margin-top: 20px;
+  margin-top: 27px;
+  margin-left: 21px;
   display: flex;
   flex-direction: column;
 }
 
 .services__sublist-item {
   position: relative;
-  margin-bottom: 25px;
+  margin-bottom: 15px;
   width: 371px;
   font-weight: normal;
   font-size: 18px;
@@ -193,7 +246,7 @@
 .services__sublist-button {
   width: 198px;
   min-height: 51px;
-  margin-top: 15px;
+  margin-top: 35px;
 }
 
 .services__pagination {

@@ -15,8 +15,9 @@
 .footer__wrapper {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: flex-start;
   width: 50%;
+  padding-top: 9px;
 }
 
 .footer__nav,
@@ -30,10 +31,12 @@
   display: flex;
   flex-wrap: nowrap;
   position: relative;
+  align-items: flex-start;
+  align-content: flex-start;
 }
 
 .footer__logo-wrapper img {
-  margin-right: 150px;
+  margin-right: 61%;
 }
 
 .footer__logo-wrapper p {
@@ -45,7 +48,7 @@
   line-height: 17px;
   color: #707c87;
   position: absolute;
-  top: 50px;
+  top: 43px;
 }
 
 .footer__list {
@@ -54,11 +57,20 @@
   font-weight: 500;
   font-size: 16px;
   line-height: 22px;
+  margin-top: 5px;
 }
 
 .footer__list-item {
-  width: auto;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+  width: 145px;
+}
+
+.footer__contacts-wrapper {
+  margin-right: 19.2%;
+}
+
+.footer__contacts-wrapper:last-of-type {
+  margin-right: 5.2%;
 }
 
 .footer__contacts-wrapper a {
@@ -99,7 +111,8 @@
   width: 10px;
   height: 16px;
   position: absolute;
-  left: -19px;
+  left: -28px;
+  top: 2px;
   background-image: url("../img/icon-cellphone-black.svg");
   background-repeat: no-repeat;
   background-position: center;
@@ -111,7 +124,8 @@
   width: 16px;
   height: 16px;
   position: absolute;
-  left: -25px;
+  left: -32px;
+  top: 2px;
   background-image: url("../img/icon-phone.svg");
   background-repeat: no-repeat;
   background-position: center;
@@ -119,10 +133,18 @@
 
 .footer__socials {
   @include reset;
+
+  position: relative;
+  left: 2px;
 }
 
 .footer__socials-item {
-  padding: 7.5px;
+  padding: 0 4.5px;
+  margin-right: 5px;
+}
+
+.footer__socials-item:last-of-type {
+  margin-right: 0;
 }
 
 .footer__socials-item-link {

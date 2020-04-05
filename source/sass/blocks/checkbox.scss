@@ -6,7 +6,7 @@
 .checkbox input[type="checkbox"]:not(:checked) + label, {
   display: inline-block;
   position: relative;
-  padding-left: 40px;
+  padding-left: 25px;
   padding-top: 10px;
   line-height: 16px;
   cursor: pointer;
@@ -16,13 +16,17 @@
 .checkbox input[type="checkbox"]:not(:checked) + label::before, {
   content: "";
   position: absolute;
-  left: 8px;
-  top: 9px;
-  width: 16px;
-  height: 16px;
+  left: 2px;
+  top: 11px;
+  width: 14px;
+  height: 14px;
   border: 1px solid $blueColor;
   border-radius: 2px;
   background-color: $blueColor;
+}
+
+.checkbox input[type="checkbox"]:not(:checked) + label::before {
+  background-color: $lightBlueColor;
 }
 
 .checkbox input[type="checkbox"]:checked + label::after,
@@ -33,8 +37,8 @@
 
 .checkbox input[type="checkbox"]:checked + label::after,
 .checkbox input[type="checkbox"]:not(:checked) + label::after {
-  left: 13px;
-  top: 13px;
+  left: 5px;
+  top: 11px;
   width: 6px;
   height: 4px;
   border-left: 1px solid white;
