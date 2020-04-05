@@ -203,8 +203,6 @@
   width: 340px;
 }
 
-
-
 .services__sublist {
   @include reset;
   margin-top: 27px;
@@ -267,8 +265,39 @@
     box-sizing: border-box;
     min-height: 380px;
     position: relative;
-    padding: 60px 45px;
+    padding: 55px 45px;
     z-index: -2;
+  }
+
+  .services__second-list-item p {
+    font-size: 16px;
+    line-height: 22px;
+    margin-right: 29px;
+    width: 300px;
+  }
+
+  .services__second-list-item--car {
+    width: 265px;
+  }
+
+  .services__second-list-item--car h3 {
+    width: 265px;
+  }
+
+  .services__second-list-item--lock h3 {
+    width: 300px;
+  }
+
+  .services__second-list-item--phone h3 {
+    width: 350px;
+  }
+
+  .services__second-list-item--phone .services__sublist-item:first-of-type {
+    width: 200px;
+  }
+
+  .services__second-list-item--phone .services__sublist-item:last-of-type {
+    width: 325px;
   }
 
   .services__image-wrapper {
@@ -276,34 +305,67 @@
     height: 260px;
   }
 
+  .services__image-wrapper--lock {
+    margin-right: 0;
+    position: relative;
+    left: 68px;
+    top: 34px;
+  }
+
+  .services__image-wrapper--phone {
+    margin-right: 0;
+    position: relative;
+    left: 42px;
+    top: 12px;
+  }
+
+  .services__second-list-item--car .services__image-wrapper {
+    margin-right: 0;
+  }
+
   .services__second-list-item img {
     position: relative;
-    right: 100px;
+    right: 93px;
     width: auto;
     height: 260px;
+  }
+
+  .services__second-list-item--car img {
+    right: 98px;
+    top: 2px;
+  }
+
+  .services__second-list-item--lock img {
+    height: 228px;
   }
 
   .services__second-list-item-wrapper h3 {
     width: 310px;
     font-size: 18px;
     line-height: 25px;
-    margin-bottom: 35px;
+    margin-bottom: 25px;
+  }
+
+  .services__sublist {
+    margin-top: 0;
   }
 
   .services__sublist-item {
     font-size: 16px;
     line-height: 21px;
+    width: 360px;
   }
 
   .services__sublist-item::before {
     width: 11px;
     height: 8px;
     background-size: 11px 8px;
+    left: -21px;
   }
 
   .services .services__sublist-button {
     width: 198px;
-    margin-top: 30px;
+    margin-top: 27px;
   }
 
   .services__pagination {
@@ -314,8 +376,8 @@
     height: 20px;
     margin: 0 auto;
     position: absolute;
-    bottom: 15px;
-    right: 50%;
+    bottom: 8px;
+    right: 41.75%;
   }
 
   .services__pagination .swiper-pagination-bullet {

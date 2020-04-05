@@ -406,14 +406,14 @@
 
 @media (max-width: $tabletResolution) {
   .form {
-    padding: 80px 45px;
-    margin-bottom: 35px;
+    padding: 70px 45px;
+    margin-bottom: 0;
   }
 
   .form h2 {
     font-size: 32px;
     line-height: 45px;
-    margin-bottom: 45px;
+    margin-bottom: 27px;
   }
 
   .form__wrapper-second,
@@ -422,7 +422,7 @@
   }
 
   .form__wrapper-second {
-    margin-bottom: 45px;
+    margin-bottom: 27px;
   }
 
   .form__offer {
@@ -435,7 +435,34 @@
   .form__third-step h3 {
     font-size: 18px;
     line-height: 25px;
-    margin-bottom: 25px;
+    margin-bottom: 19px;
+  }
+
+  .form__second-step h3 {
+    margin-bottom: 15px;
+  }
+
+  .form__price-wrapper {
+    margin-bottom: 13px;
+  }
+
+  .form__price-wrapper span {
+    position: relative;
+    top: -2px;
+    left: 4px;
+  }
+
+  .form__initial-payment-wrapper input[type="range"] {
+    margin-bottom: 26px;
+  }
+
+  .form__year-wrapper label {
+    margin-bottom: 9px;
+  }
+
+  .form__checkbox-wrapper {
+    position: relative;
+    top: -5.5px;
   }
 
   .form__third-step {
@@ -448,18 +475,41 @@
     margin-bottom: 53px;
   }
 
+  .form__offer {
+    padding: 53px 60px;
+  }
+
   .form__offer-wrapper {
     margin-right: 5%;
   }
 
   .form__offer-wrapper:nth-of-type(2n) {
     margin-right: 30%;
+    padding-left: 13px;
+  }
+
+  .form__offer-wrapper h4 {
+    margin-bottom: 4px;
+  }
+
+  .form__offer  .button {
+    margin-top: 7px;
   }
 
   .form__third-step input[type="text"],
   .form__third-step-wrapper input[type="tel"],
   .form__third-step-wrapper input[type="email"] {
     background-color: white;
+  }
+
+  .form__third-step h3,
+  .form__third-step-wrapper {
+    margin-bottom: 40px;
+  }
+
+  .form__minus-button {
+    margin-top: 21px;
+    margin-left: 24px;
   }
 }
 

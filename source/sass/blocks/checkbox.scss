@@ -16,8 +16,8 @@
 .checkbox input[type="checkbox"]:not(:checked) + label::before, {
   content: "";
   position: absolute;
-  left: 2px;
-  top: 11px;
+  left: 0;
+  top: 10px;
   width: 14px;
   height: 14px;
   border: 1px solid $blueColor;
@@ -38,7 +38,7 @@
 .checkbox input[type="checkbox"]:checked + label::after,
 .checkbox input[type="checkbox"]:not(:checked) + label::after {
   left: 5px;
-  top: 11px;
+  top: 13px;
   width: 6px;
   height: 4px;
   border-left: 1px solid white;

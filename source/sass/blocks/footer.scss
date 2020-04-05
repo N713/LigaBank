@@ -169,34 +169,63 @@
 
   .footer__wrapper {
     flex-direction: column;
+    width: 30%;
+    padding-top: 8px;
   }
 
   .footer__logo-wrapper {
     display: flex;
     flex-direction: column;
+    margin-right: 15%;
   }
 
   .footer__logo-wrapper img {
     order: 1;
-  }
-
-  .footer__nav {
-    order: 2;
+    width: 132px;
+    height: 24px;
   }
 
   .footer__logo-wrapper p {
     position: relative;
-    top: 0;
+    top: 13px;
     order: 3;
   }
 
+  .footer__nav {
+    order: 2;
+    margin-top: 24px;
+  }
+
   .footer__contacts-wrapper {
-    margin-bottom: 32px;
+    margin-bottom: 20px;
     padding-left: 30px;
   }
 
   .footer__contacts-wrapper a {
     width: auto;
+  }
+
+  .footer__contacts-wrapper--smartphone a::before {
+    left: -30px;
+    top: 0;
+  }
+
+  .footer__contacts-wrapper--phone a,
+  .footer__contacts-wrapper--phone p {
+    position: relative;
+    left: 2px;
+  }
+
+  .footer__socials {
+    position: relative;
+    left: -4px;
+    margin-top: 5px;
+    margin-right: 0;
+  }
+
+  .footer__socials-item {
+    padding: 0 4px;
+    margin-right: 5%;
   }
 }
 
