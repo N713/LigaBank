@@ -400,14 +400,15 @@
 
 @media (max-width: $mobileResolution) {
   .services__second-list-item {
-    padding: 60px 15px;
+    padding: 55px 15px;
     position: relative;
+    min-height: 362px;
   }
 
   .services__second-list-item h3 {
     font-size: 16px;
     line-height: 22px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
   }
 
   .services__second-list-item-wrapper {
@@ -415,17 +416,71 @@
     width: 100%;
   }
 
+  .services__second-list-item--car h3 {
+    width: 230px;
+  }
+
+  .services__second-list-item--car p {
+    margin-top: 0;
+    font-size: 14px;
+    line-height: 20px;
+    width: 280px;
+  }
+
+  .services__second-list-item--lock h3 {
+    width: 270px;
+    margin-left: 3px;
+    margin-top: 1px;
+  }
+
+  .services__second-list-item--lock .services__sublist {
+    padding-left: 18px;
+  }
+
+  .services__image-wrapper--lock {
+    left: 73%;
+  }
+
+  .services__second-list-item--phone {
+    padding-right: 6px;
+  }
+
+  .services__second-list-item--phone h3 {
+    width: 250px;
+  }
+
+  .services__second-list-item--phone .services__sublist-item:first-of-type {
+    width: 175px;
+  }
+
+  .services__second-list-item--phone .services__sublist-item:last-of-type {
+    width: 220px;
+  }
+
+  .services__second-list-item--phone .services__second-list-item-wrapper {
+    margin-left: 4px;
+  }
+
+  .services__image-wrapper--phone {
+    left: 70.5%;
+  }
+
   .services__sublist {
     margin-top: 0;
-    padding-left: 20px;
-    margin-bottom: 30px;
+    padding-left: 15px;
+    margin-bottom: 25px;
+    margin-left: 0;
   }
 
   .services__sublist-item {
     width: 212px;
     font-size: 14px;
     line-height: 18px;
-    margin-bottom: 20px;
+    margin-bottom: 12px;
+  }
+
+  .services__sublist-item::before {
+    left: -16px;
   }
 
   .services__sublist-button {
@@ -435,11 +490,12 @@
 
   .services__image-wrapper {
     width: 87px;
-    height: 113px;
+    height: 123px;
     position: absolute;
-    right: 0;
-    top: 120px;
+    right: -3px;
+    top: 92px;
     z-index: -1;
+    margin-right: 0;
   }
 
   .services__second-list-item img {
@@ -451,9 +507,9 @@
 
   .services__image-wrapper--car img {
     width: auto;
-    height: 142px;
-    bottom: 15px;
-    left: -60px;
+    height: 134px;
+    top: -4px;
+    left: -48px;
   }
 
   .services__image-wrapper--lock img {
@@ -468,5 +524,24 @@
     height: 113px;
     right: 30px;
     top: 6px;
+  }
+
+  .services .services__sublist-button {
+    box-sizing: border-box;
+    min-height: 43px;
+    height: 43px;
+    width: 100%;
+    padding: 0;
+  }
+
+  .services__pagination {
+    bottom: 3px;
+    right: 35%;
+  }
+
+  .services__pagination .swiper-pagination-bullet {
+    width: 6px;
+    height: 6px;
+    margin: 3px;
   }
 }

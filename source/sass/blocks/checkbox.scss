@@ -53,3 +53,20 @@
 .checkbox input[type="checkbox"]:checked + label::after {
   opacity: 1;
 }
+
+@media (max-width: $mobileResolution) {
+  .checkbox input[type="checkbox"]:checked + label::before,
+  .checkbox input[type="checkbox"]:not(:checked) + label::before {
+    top: 5px;
+  }
+
+  .checkbox input[type="checkbox"]:checked + label,
+  .checkbox input[type="checkbox"]:not(:checked) + label, {
+    padding-top: 4px;
+  }
+
+  .checkbox input[type="checkbox"]:checked + label::after,
+  .checkbox input[type="checkbox"]:not(:checked) + label::after {
+    top: 9px;
+  }
+}

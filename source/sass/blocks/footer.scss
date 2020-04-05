@@ -231,15 +231,12 @@
 
 @media (max-width: $mobileResolution) {
   .footer {
-    padding: 0 15px;
-    padding-top: 39px;
-    padding-bottom: 45px;
+    padding: 18px 15px;
     flex-direction: column;
   }
 
-  .footer__logo-wrapper,
-  .footer__nav {
-    margin-bottom: 30px;
+  .footer__logo-wrapper {
+    margin-bottom: 5px;
   }
 
   .footer__logo-wrapper img {
@@ -253,16 +250,26 @@
   }
 
   .footer__nav {
-    margin-top: 0;
+    margin-top: 18px;
+    margin-bottom: 0;
   }
 
   .footer__list-item {
     font-size: 14px;
     line-height: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+  }
+
+  .footer__wrapper {
+    width: 90%;
   }
 
   .footer__contacts-wrapper {
-    padding-left: 20px;
+    padding-left: 29px;
+    margin-bottom: 15px;
+  }
+
+  .footer__contacts-wrapper--phone {
+    padding-left: 30px;
   }
 }

@@ -515,14 +515,14 @@
 
 @media (max-width: $mobileResolution) {
   .form {
-    padding: 60px 15px;
+    padding: 53px 15px;
     margin-bottom: 0;
   }
 
   .form h2 {
     font-size: 22px;
     line-height: 31px;
-    margin-bottom: 35px;
+    margin-bottom: 22px;
   }
 
   .form__first-step h3,
@@ -530,31 +530,58 @@
   .form__third-step h3 {
     font-size: 16px;
     line-height: 22px;
-    margin-bottom: 20px;
+    margin-bottom: 14px;
   }
 
   .form__first-step select {
-    margin-bottom: 30px;
+    margin-bottom: 25px;
+    padding-left: 10px;
+  }
+
+  .form__second-step h3 {
+    margin-bottom: 9px;
+  }
+
+  .form__price-wrapper {
+    margin-bottom: 8px;
+  }
+
+  .form__plus-button {
+    margin-left: -30px;
+  }
+
+  .form__initial-payment-wrapper input[type="range"] {
+    margin-bottom: 21px;
+  }
+
+  .form__checkbox-wrapper label {
+    font-size: 14px;
+    line-height: 20px;
   }
 
   .form__offer {
-    padding: 40px 15px;
+    padding: 31px 15px;
+    margin-bottom: 52px;
   }
 
   .form__offer h3 {
     font-size: 18px;
     line-height: 25px;
-    margin-bottom: 35px;
+    margin-bottom: 23px;
   }
 
   .form__offer-wrapper {
-    margin-bottom: 25px;
+    margin-bottom: 13px;
+  }
+
+  .form__offer-wrapper:nth-of-type(2n) {
+    padding-left: 0;
   }
 
   .form__offer-wrapper h4 {
     font-size: 18px;
     line-height: 25px;
-    margin-bottom: 12px;
+    margin-bottom: 1px;
   }
 
   .form__offer-wrapper span {
@@ -563,23 +590,29 @@
   }
 
   .form__offer-wrapper-outer {
-    margin-bottom: 10px;
+    margin-bottom: 16px;
   }
 
   .form__list {
-    margin-bottom: 30px;
+    margin-bottom: 13px;
   }
 
   .form__list-item {
     flex-direction: column;
     align-items: flex-start;
-    padding: 20px 0;
+    padding: 0;
+    padding-bottom: 13px;
+    margin-bottom: 15px;
+  }
+
+  .form__list-item:last-of-type {
+    margin-bottom: 0;
   }
 
   .form__list-item h4 {
     font-size: 18px;
     line-height: 25px;
-    margin-bottom: 12px;
+    margin-bottom: 0;
   }
 
   .form__list-item span {
@@ -589,7 +622,11 @@
 
   .form__third-step-wrapper {
     flex-direction: column;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
+  }
+
+  .form__third-step h3 {
+    margin-bottom: 33px;
   }
 
   .form__third-step input[type="text"],
@@ -600,5 +637,18 @@
     line-height: 22px;
     margin-bottom: 20px;
     padding-left: 15px;
+  }
+
+  .form__offer .button {
+    margin-top: 0;
+    height: 51px;
+  }
+
+  .form__wrapper-second {
+    margin-bottom: 19px;
+  }
+
+  .form__third-step .button {
+    height: 51px;
   }
 }
