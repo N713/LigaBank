@@ -14,7 +14,7 @@
 
 .footer__wrapper {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: flex-start;
   width: 50%;
   padding-top: 9px;
@@ -27,16 +27,23 @@
   @include reset;
 }
 
+.footer__nav {
+  width: (145 / 478) * 100%;
+}
+
 .footer__logo-wrapper {
   display: flex;
+  justify-content: space-between;
   flex-wrap: nowrap;
   position: relative;
   align-items: flex-start;
   align-content: flex-start;
+  box-sizing: border-box;
+  width: 40.8%;
 }
 
 .footer__logo-wrapper img {
-  margin-right: 61%;
+  margin-right: 25%;
 }
 
 .footer__logo-wrapper p {
