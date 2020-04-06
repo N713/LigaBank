@@ -7,10 +7,10 @@
   background-color: $lightBlueColor;
   border: 4px solid $blueColor;
   position: fixed;
-  margin-top: -277px;
-  margin-left: -330px;
-  top: 50%;
-  left: 52%;
+  margin: 0 auto;
+  top: 10%;
+  left: 0;
+  right: 0;
   z-index: 10;
 }
 
@@ -97,6 +97,15 @@
     padding: 60px 88px;
   }
 
+  .login__wrapper {
+    margin-bottom: 45px;
+  }
+
+  .login__wrapper img {
+    height: 27px;
+    width: auto;
+  }
+
   .login .icon-button img {
     width: 16px;
     height: 16px;
@@ -110,16 +119,17 @@
 
 @media (max-width: $mobileResolution) {
   .login {
-    top: 10%;
-    left: 5%;
     width: 290px;
     padding: 50px 5px;
-    margin: 0;
+  }
+
+  .login__wrapper {
+    margin-bottom: 35px;
   }
 
   .login .icon-button img {
-    width: 12px;
-    height: 12px;
+    width: 14px;
+    height: 14px;
   }
 
   .login__form-wrapper .icon-button img {

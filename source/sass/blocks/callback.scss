@@ -5,10 +5,11 @@
   width: 500px;
   padding: 25px;
   background-color: $lightBlueColor;
-  margin: 10px auto;
   position: fixed;
-  top: calc(50% - 185px);
-  left: calc(50% - 250px);
+  margin: 0 auto;
+  top: 20%;
+  left: 0;
+  right: 0;
   z-index: 10;
 }
 
