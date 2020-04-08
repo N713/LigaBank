@@ -33,12 +33,24 @@ const closePopup = () => {
 const setPopupHandlers = () => {
   loginLink.addEventListener(`click`, (evt) => {
     evt.preventDefault();
+    evt.stopPropagation();
+
     openPopup();
   });
 
   closePopupButton.addEventListener(`click`, (evt) => {
     evt.preventDefault();
+
     closePopup();
+  });
+
+  container.addEventListener(`click`, (evt) => {
+    evt.preventDefault();
+    evt.stopPropagation();
+
+    if(container.classList.contains(`container--dark`)) {
+      closePopup();
+    }
   });
 };
 
