@@ -13,6 +13,15 @@ const closeAtEsc = (evt) => {
   }
 };
 
+const closeAtOverlay = (evt) => {
+  evt.preventDefault();
+  evt.stopPropagation();
+
+  if(container.classList.contains(`container--dark`)) {
+    closePopup();
+  }
+};
+
 const openPopup = () => {
   loginPopup.classList.remove(`visually-hidden`);
   container.classList.add(`container--dark`);
@@ -22,12 +31,16 @@ const openPopup = () => {
   document.addEventListener(`keydown`, (evt) => {
     closeAtEsc(evt);
   });
+
+  container.addEventListener(`click`, closeAtOverlay);
 };
 
 const closePopup = () => {
   loginPopup.classList.add(`visually-hidden`);
   document.body.classList.remove(`body--dark`);
   container.classList.remove(`container--dark`);
+
+  container.removeEventListener(`click`, closeAtOverlay);
 };
 
 const setPopupHandlers = () => {
@@ -42,15 +55,6 @@ const setPopupHandlers = () => {
     evt.preventDefault();
 
     closePopup();
-  });
-
-  container.addEventListener(`click`, (evt) => {
-    evt.preventDefault();
-    evt.stopPropagation();
-
-    if(container.classList.contains(`container--dark`)) {
-      closePopup();
-    }
   });
 };
 

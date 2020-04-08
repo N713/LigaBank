@@ -236,7 +236,11 @@
                       </button>
                       <input type="text" value="2 500 000 рублей" name="price"
                              id="property-price" min="1 200 000" max="25000000"
-                             minlength="16" maxlength="17" step="100 000" required>
+                             minlength="16" maxlength="17" step="100 000"
+                             data-mask="0[0] 000 000 {рублей}"
+                             data-input-mask="00000000 {рублей}"
+                             data-error-mask="Некорректное значение"
+                             required>
                       <button type="button" class="form__plus-button">
                         <p class="visually-hidden">Плюс</p>
                       </button>
@@ -246,7 +250,10 @@
                   <div class="form__initial-payment-wrapper range">
                     <label for="initial-payment">Первоначальный взнос</label>
                     <input type="text" value="0" name="initial-pay"
-                           id="initial-payment" min="0" required>
+                           id="initial-payment" min="0"
+                           data-mask="[0] 000 000 {рублей}"
+                           data-input-mask="000 000[0] {рублей}"
+                           required>
                     <input type="range" name="initial-percent" id="initial-percent"
                            min="10" max="100" step="5" list="marks" value="10"
                            data-min="10%">
@@ -270,6 +277,12 @@
                     <input type="checkbox" name="mother-money" id="mother-money" value="mother-money" checked>
                     <label for="mother-money">Использовать материнский капитал</label>
                   </div>
+                  <ul class="checkboxes-text visually-hidden">
+                    <li class="checkboxes-text__mortgage">Использовать материнский капитал</li>
+                    <li class="checkboxes-text__car-insurance">Оформить КАСКО в нашем банке</li>
+                    <li class="checkboxes-text__life-insurance">Оформить Страхование жизни в нашем банке</li>
+                    <li class="checkboxes-text__salary-project">Участник зарплатного проекта нашего банка</li>
+                  </ul>
                 </div>
               </div>
               <div class="form__offer visually-hidden">

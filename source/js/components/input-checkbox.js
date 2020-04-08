@@ -4,13 +4,10 @@ import {utils} from "./utils";
 import {makeOffer} from "./form-second-step";
 
 const checkboxParent = document.body.querySelector(`.form .form__second-step`);
-
-const inputText = {
-  mortgage: `Использовать материнский капитал`,
-  carInsurance: `Оформить КАСКО в нашем банке`,
-  lifeInsurance: `Оформить Страхование жизни в нашем банке`,
-  salaryProject: `Участник зарплатного проекта нашего банка`,
-};
+const mortgageText = checkboxParent.querySelector(`.checkboxes-text__mortgage`).textContent;
+const carInsuranceText = checkboxParent.querySelector(`.checkboxes-text__car-insurance`).textContent;
+const lifeInsuranceText = checkboxParent.querySelector(`.checkboxes-text__life-insurance`).textContent;
+const salaryProjectText = checkboxParent.querySelector(`.checkboxes-text__salary-project`).textContent;
 
 const checkboxTemplate = (name, id, value, text) => {
   return `<div class="form__checkbox-wrapper checkbox">
@@ -19,10 +16,10 @@ const checkboxTemplate = (name, id, value, text) => {
           </div>`;
 };
 
-const mortgageCheckbox = checkboxTemplate(`mother-money`, `mother-money`, `mother-money`, inputText.mortgage);
-const carInsuranceCheckbox = checkboxTemplate(`car-insurance`, `car-insurance`, `car-insurance`, inputText.carInsurance);
-const lifeInsurance = checkboxTemplate(`life-insurance`, `life-insurance`, `life-insurance`, inputText.lifeInsurance);
-const salaryProject = checkboxTemplate(`salary-project`, `salary-project`, `salary-project`, inputText.salaryProject);
+const mortgageCheckbox = checkboxTemplate(`mother-money`, `mother-money`, `mother-money`, mortgageText);
+const carInsuranceCheckbox = checkboxTemplate(`car-insurance`, `car-insurance`, `car-insurance`, carInsuranceText);
+const lifeInsurance = checkboxTemplate(`life-insurance`, `life-insurance`, `life-insurance`, lifeInsuranceText);
+const salaryProject = checkboxTemplate(`salary-project`, `salary-project`, `salary-project`, salaryProjectText);
 
 const removeCheckboxes = () => {
   const previousCheckboxes = Array.from(document.body.querySelectorAll(`.form .form__checkbox-wrapper`));

@@ -11,7 +11,7 @@ export class inputInitialPay {
     this._rangeInput = rangeInput;
     this._offerFunction = offerFunction;
     this._inputMask = IMask(this._input, {
-      mask: `[0] 000 000 ${this._currency}`
+      mask: this._input.getAttribute(`data-mask`)
     });
   }
 
@@ -23,7 +23,7 @@ export class inputInitialPay {
     this._input.addEventListener(`input`, (evt) => {
       evt.preventDefault();
 
-      this._inputMask.mask = `000 000[0] ${this._currency}`;
+      this._inputMask.mask = this._input.getAttribute(`data-input-mask`);
     });
 
     this._input.addEventListener(`change`, (evt) => {

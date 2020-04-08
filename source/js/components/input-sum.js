@@ -13,7 +13,7 @@ export class sumInput {
     this._rangeBoundedInput = rangeBoundedInput;
     this._offerFunction = offerFunction;
     this._inputMask = IMask(this._input, {
-      mask: `0[0] 000 000 {рублей}`,
+      mask: this._input.getAttribute(`data-mask`)
     });
   }
 
@@ -59,7 +59,7 @@ export class sumInput {
     utils.setPercent(this._boundedInput, this._input, currentPercent);
 
     this._input.addEventListener(`input`, () => {
-      this._inputMask.mask = `00000000 {рублей}`;
+      this._inputMask.mask = this._input.getAttribute(`data-input-mask`);
       this._input.classList.remove(`error`);
       this._offerFunction();
     });
@@ -74,11 +74,11 @@ export class sumInput {
       const sum = utils.inputSumToInteger(this._input);
 
       if (sum > max || sum < min) {
-        this._inputMask.mask = `Некорректное значение`;
+        this._inputMask.mask = this._input.getAttribute(`data-error-mask`);
         this._input.classList.add(`error`);
       } else {
         this._inputMask.updateValue();
-        this._inputMask.mask = `0[0] 000 000 рублей`;
+        this._inputMask.mask = this._input.getAttribute(`data-mask`);
         this._input.value = `${sum.toLocaleString(`ru`)} ${this._currency}`;
       }
 
