@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,7 +22,7 @@
           <button class="icon-button">
             <img src="img/burger.svg" width="16" height="12" alt="Открыть меню">
           </button>
-          <a href="#" class="header__logo">
+          <a class="header__logo">
             <img src="img/Logo.svg" width="152" height="28" alt="Лига Банк">
           </a>
           <nav class="header__nav">
@@ -132,7 +132,7 @@
                       Возможность ежемесячной капитализации или вывод процентов на банковскую карту
                     </li>
                   </ul>
-                  <button class="button services__sublist-button">Узнать подробнее</button>
+                  <a href="#" class="button services__sublist-button">Узнать подробнее</a>
                 </div>
                 <div class="services__image-wrapper services__image-wrapper--piggy">
                   <picture>
@@ -177,7 +177,7 @@
                     <li class="list__item services__sublist-item">Страхование жизни и здоровья</li>
                     <li class="list__item services__sublist-item">Страхование недвижимости</li>
                   </ul>
-                  <button class="button services__sublist-button">Узнать подробнее</button>
+                  <a href="#" class="button services__sublist-button">Узнать подробнее</a>
                 </div>
                 <div class="services__image-wrapper services__image-wrapper--lock">
                   <picture>
@@ -197,7 +197,7 @@
                     <li class="list__item services__sublist-item">Мобильный банк, который всегда под рукой</li>
                     <li class="list__item services__sublist-item">Приложение Лига-проездной позволит вам оплачивать билеты по всему миру</li>
                   </ul>
-                  <button class="button services__sublist-button">Узнать подробнее</button>
+                  <a href="#" class="button services__sublist-button">Узнать подробнее</a>
                 </div>
                 <div class="services__image-wrapper services__image-wrapper--phone">
                   <picture>
@@ -232,17 +232,21 @@
                     <label for="property-price">Стоимость недвижимости</label>
                     <div class="form__price-wrapper-second">
                       <button type="button" class="form__minus-button">
-                        <p class="visually-hidden">Минус</p>
+                        <span class="visually-hidden">Минус</span>
                       </button>
                       <input type="text" value="2 500 000 рублей" name="price"
-                             id="property-price" min="1 200 000" max="25000000"
-                             minlength="16" maxlength="17" step="100 000"
+                             id="property-price"
+                             minlength="16"
+                             maxlength="17"
+                             data-min="1200000"
+                             data-max="25000000"
+                             data-step="100 000"
                              data-mask="0[0] 000 000 {рублей}"
                              data-input-mask="00000000 {рублей}"
                              data-error-mask="Некорректное значение"
                              required>
                       <button type="button" class="form__plus-button">
-                        <p class="visually-hidden">Плюс</p>
+                        <span class="visually-hidden">Плюс</span>
                       </button>
                     </div>
                     <span>От 1 200 000 до 25 000 000 рублей</span>
@@ -250,24 +254,41 @@
                   <div class="form__initial-payment-wrapper range">
                     <label for="initial-payment">Первоначальный взнос</label>
                     <input type="text" value="0" name="initial-pay"
-                           id="initial-payment" min="0"
-                           data-mask="[0] 000 000 {рублей}"
-                           data-input-mask="000 000[0] {рублей}"
+                           id="initial-payment"
+                           data-min="0"
+                           data-mask="[0]000000 {рублей}"
+                           data-input-mask="000000[0] {рублей}"
                            required>
                     <input type="range" name="initial-percent" id="initial-percent"
-                           min="10" max="100" step="5" list="marks" value="10"
-                           data-min="10%">
+                           data-min="10"
+                           data-max="100"
+                           data-step="5"
+                           data-min-percent="10%"
+                           list="marks"
+                           value="10">
                     <datalist id="marks">
                       <option value="10" label="10%">
                     </datalist>
                   </div>
                   <div class="form__year-wrapper range">
                     <label for="initial-payment">Срок кредитования</label>
-                    <input type="text" value="5 лет" name="years"
-                           id="years" min="5" max="30" required>
-                    <input type="range" name="years-range" id="years-range"
-                           min="5" max="30" step="1" list="yearsmarks" value="5"
-                           minlength="5" maxlength="6" data-min="5 лет" data-max="30 лет">
+                    <input type="text"
+                           value="5 лет"
+                           name="years"
+                           id="years"
+                           data-min="5"
+                           data-max="30"
+                           required>
+                    <input type="range"
+                           name="years-range"
+                           id="years-range"
+                           min="5"
+                           max="30"
+                           step="1"
+                           list="yearsmarks"
+                           value="5"
+                           data-min="5 лет"
+                           data-max="30 лет">
                     <datalist id=yearsmarks>
                       <option value="5" label="5 лет">
                       <option value="30" label="30 лет">

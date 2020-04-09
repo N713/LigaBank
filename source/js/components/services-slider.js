@@ -25,6 +25,7 @@ const tabletSwiper = new Swiper(`.swiper-container-services`, {
     1024: {
       simulateTouch: false,
       setWrapperSize: true,
+      spaceBetween: 1000,
     },
   }
 });

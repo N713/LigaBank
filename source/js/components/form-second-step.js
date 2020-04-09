@@ -153,7 +153,7 @@ const makeOffer = () => {
       offerPercent.textContent = percentNumberToString(percents.cash.basic_cash);
     }
 
-    if (creditSum > limits.salary_low_limit && creditSum < limits.salary_high_limit) {
+    if (creditSum >= limits.salary_low_limit && creditSum < limits.salary_high_limit) {
       percent = percents.cash.lowed_cash;
       offerPercent.textContent = percentNumberToString(percents.cash.lowed_cash);
     }

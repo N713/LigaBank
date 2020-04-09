@@ -6,14 +6,13 @@
 .services {
   padding-top: 60px;
   overflow-x: hidden;
-  max-width: 1172px;
+  width: 100%;
   margin: 0 auto;
 }
 
 .services__list {
   display: flex;
   flex-wrap: nowrap;
-  max-width: 1170px;
   margin: 0 auto;
 }
 
@@ -21,7 +20,7 @@
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
-  width: 292.5px;
+  width: 25%;
   min-height: 93px;
   font-weight: 500;
   font-size: 18px;
