@@ -1,7 +1,7 @@
 'use strict';
 
 const ROUBLES = `рублей`;
-const REG = /\s+/g;
+const  FIND_SPACES_REG = /\s+/g;
 
 const utils = {
   Position: {
@@ -52,7 +52,7 @@ const utils = {
 
   inputSumToInteger: (input) => {
     let sum = input.value.slice(0, -(utils.getCurrency(input).length));
-    return Number(sum.replace(REG,''));
+    return Number(sum.replace(FIND_SPACES_REG,''));
   },
 
   addCurrencySubstr: (input, currency) => {
@@ -74,7 +74,7 @@ const utils = {
   },
 
   getIntegerValue(input, value) {
-    return Number(input.getAttribute(`${value}`).replace(REG,''));
+    return Number(input.getAttribute(`${value}`).replace(FIND_SPACES_REG,''));
   },
 
   changeSum(direction = `plus`, input, buttonPlus, buttonMinus, currency) {
@@ -108,4 +108,4 @@ const utils = {
 
 };
 
-export {utils, REG, ROUBLES};
+export {utils, FIND_SPACES_REG, ROUBLES};

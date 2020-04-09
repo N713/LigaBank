@@ -1,7 +1,7 @@
 'use strict';
 
 import IMask from "imask";
-import {utils, REG, ROUBLES} from "./utils";
+import {utils, FIND_SPACES_REG} from "./utils";
 
 export class sumInput {
   constructor(input, boundedInput, rangeBoundedInput, buttonPlus, buttonMinus, currency, offerFunction) {
@@ -22,7 +22,7 @@ export class sumInput {
   }
 
   getIntegerValue(value) {
-    return Number(this._input.getAttribute(`${value}`).replace(REG,''));
+    return Number(this._input.getAttribute(`${value}`).replace(FIND_SPACES_REG,''));
   }
 
   changeSum(direction = `plus`) {

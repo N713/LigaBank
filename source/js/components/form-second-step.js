@@ -7,9 +7,11 @@ import {yearsInputSum} from "./input-years";
 import {percentRange} from "./input-initial-percent";
 import {yearsRangeInput} from "./input-years-range";
 import {setRequestFields} from "./form-request";
+import numeralize from "numeralize-ru";
 
-const MONTHS_IN_YEARS = 12;
 const YEARS = `лет`;
+const MONTHS_IN_YEARS = 12;
+const MOTHER_MONEY = 470000;
 const MORTGAGE_PERCENT_LIMIT = 0.15;
 
 const mortgageSum = document.body.querySelector(`.form .form__price-wrapper-second input`);
@@ -52,7 +54,15 @@ const percents = {
     low_cash: 9.5,
     delta_cash: 0.5,
   },
-}
+};
+
+const limits = {
+  mortgage_credit_limit: 500000,
+  car_credit_limit: 200000,
+  car_sum_limit: 2000000,
+  salary_low_limit: 750000,
+  salary_high_limit: 2000000,
+};
 
 const makeNonLessText = (credit, value) => {
   return `Наш банк не выдаёт ${credit} кредиты меньше ${value} рублей.`;
@@ -78,21 +88,17 @@ const makeOffer = () => {
   let sum = creditSum - initialPay;
   let percent = percents.mortgage.basic_mortgage;
 
-  console.log(percent);
-
   if (motherMoneyCheckbox && !carInsuranceCheckbox && !lifeInsuranceCheckbox && !salaryProjectCheckbox) {
     const percentLimit = creditSum * MORTGAGE_PERCENT_LIMIT;
-    const creditLimit = 500000;
-    const motherMoney = 470000;
 
     if (motherMoneyCheckbox.checked) {
-      sum = sum - motherMoney;
+      sum = sum - MOTHER_MONEY;
     }
 
-    if (sum < creditLimit) {
+    if (sum < limits.mortgage_credit_limit) {
       nonLess.classList.remove(`visually-hidden`);
       offer.style.display = `none`;
-      nonLessText.textContent = makeNonLessText(`ипотечные`, creditLimit);
+      nonLessText.textContent = makeNonLessText(`ипотечные`, limits.mortgage_credit_limit);
     } else {
       nonLess.classList.add(`visually-hidden`);
       offer.style.display = `block`;
@@ -110,12 +116,10 @@ const makeOffer = () => {
   }
 
   if (carInsuranceCheckbox && lifeInsuranceCheckbox && !motherMoneyCheckbox && !salaryProjectCheckbox) {
-    const creditLimit = 200000;
-    const sumLimit = 2000000;
     percent = percents.car.basic_car;
     offerPercent.textContent = percentNumberToString(percents.car.basic_car);
 
-    if (creditSum > sumLimit) {
+    if (creditSum > limits.car_sum_limit) {
       percent = percents.car.lowed_car;
       offerPercent.textContent = percentNumberToString(percents.car.lowed_car);
     }
@@ -130,10 +134,10 @@ const makeOffer = () => {
       offerPercent.textContent = percentNumberToString(percents.car.all_option_car);
     }
 
-    if (sum < creditLimit) {
+    if (sum < limits.car_credit_limit) {
       nonLess.classList.remove(`visually-hidden`);
       offer.style.display = `none`;
-      nonLessText.textContent = makeNonLessText(`автокредиты`, creditLimit);
+      nonLessText.textContent = makeNonLessText(`автокредиты`, limits.car_credit_limit);
     } else {
       nonLess.classList.add(`visually-hidden`);
       offer.style.display = `block`;
@@ -143,20 +147,18 @@ const makeOffer = () => {
   }
 
   if (salaryProjectCheckbox && !motherMoneyCheckbox && !carInsuranceCheckbox && !lifeInsuranceCheckbox) {
-    const sumLowLimit = 750000;
-    const sumHighLimit = 2000000;
 
-    if (creditSum < sumLowLimit) {
+    if (creditSum < limits.salary_low_limit) {
       percent = percents.cash.basic_cash;
       offerPercent.textContent = percentNumberToString(percents.cash.basic_cash);
     }
 
-    if (creditSum > sumLowLimit && creditSum < sumHighLimit) {
+    if (creditSum > limits.salary_low_limit && creditSum < limits.salary_high_limit) {
       percent = percents.cash.lowed_cash;
       offerPercent.textContent = percentNumberToString(percents.cash.lowed_cash);
     }
 
-    if (creditSum >= sumHighLimit) {
+    if (creditSum >= limits.salary_high_limit) {
       percent = percents.cash.low_cash;
       offerPercent.textContent = percentNumberToString(percents.cash.low_cash);
     }
@@ -180,9 +182,12 @@ const makeOffer = () => {
   const monthSum = Number((sum * multiplier).toFixed(0));
   const neededPay = Number((monthSum * 100 / 45).toFixed(0));
 
-  offerSum.textContent = `${sum.toLocaleString(`ru`)} ${ROUBLES}`;
-  offerMonth.textContent = `${monthSum.toLocaleString(`ru`)} ${ROUBLES}`;
-  offerNeed.textContent = `${neededPay.toLocaleString(`ru`)} ${ROUBLES}`;
+  offerSum.textContent = `${sum.toLocaleString(`ru`)} ${numeralize
+    .pluralize(sum, `рубль`, `рубля`, `рублей`)}`;
+  offerMonth.textContent = `${monthSum.toLocaleString(`ru`)} ${numeralize
+    .pluralize(monthSum, `рубль`, `рубля`, `рублей`)}`;
+  offerNeed.textContent = `${neededPay.toLocaleString(`ru`)} ${numeralize
+    .pluralize(neededPay, `рубль`, `рубля`, `рублей`)}`;
 };
 
 const mortgageSumInput = new sumInput(mortgageSum, initialPayment, initialPaymentRange, mortgageSumPlus, mortgageSumMinus, ROUBLES, makeOffer);

@@ -14,6 +14,7 @@ if (!String.prototype.startsWith) {
   };
 }
 
+smoothscroll.polyfill();
 setTabsHandlers();
 setPopupHandlers();
 setLoginFormHandlers();
@@ -22,5 +23,3 @@ setHeaderLinksHandlers();
 setSelectHandler();
 setFormHandlers();
 makeOffer();
-
-smoothscroll.polyfill();

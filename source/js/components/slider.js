@@ -12,7 +12,7 @@ const mySwiper = new Swiper(`.swiper-container`, {
   slidesPerView: 1,
   slidesPerGroup: 1,
   setWrapperSize: true,
-  spaceBetween: 0,
+  spaceBetween: 1000,
 
   pagination: {
     el: '.swiper-pagination',
