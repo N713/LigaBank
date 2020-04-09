@@ -7,6 +7,8 @@ import {setSelectHandler, setFormHandlers} from "./components/form";
 import {makeOffer} from "./components/form-second-step";
 import smoothscroll from 'smoothscroll-polyfill';
 
+import {addAllMarkers, initialCheck, addListeners} from "./components/map";
+
 if (!String.prototype.startsWith) {
   String.prototype.startsWith = function(searchString, position){
     position = position || 0;

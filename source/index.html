@@ -372,6 +372,7 @@
                 const sng = document.getElementById("sng");
                 const europe = document.getElementById("europe");
                 let map;
+                let markers = [];
 
                 let opt = {
                   center: {lat: 54.037157, lng: 59.967874},
@@ -401,45 +402,90 @@
                   ["Рим", 41.901809, 12.492731],
                 ];
 
-                function setMarkers(map, locations) {
-                  locations.forEach((location) => {
-                    let title = location[0];
-                    let lat = location[1];
-                    let lng = location[2];
+                const showMarkers = (locations) => {
+                  markers.forEach((marker) => {
+                    for (let i = 0; i < locations.length; i++) {
+                      if (marker.title === locations[i][0]) {
+                        marker.setMap(map);
+                      }
+                    }
+                  });
+                };
 
-                    const position = new google.maps.LatLng(lat, lng);
-                    const marker = new google.maps.Marker({
-                      map: map,
-                      title: title,
-                      position: position,
-                      animation: google.maps.Animation.DROP,
+                const hideMarkers = (locations) =>{
+                  markers.forEach((marker) => {
+                    for (let i = 0; i < locations.length; i++) {
+                      if (marker.title === locations[i][0]) {
+                        marker.setMap(null);
+                      }
+                    }
+                  });
+                };
+
+                const checkMarkers = (region, locations) => {
+                  if(region.checked) {
+                    showMarkers(locations);
+                  } else {
+                    hideMarkers(locations);
+                  }
+                };
+
+                const addAllMarkers = () => {
+                  const allLocations = russiaLocations.concat(sngLocations).concat(europeLocations);
+
+                  allLocations.forEach((location) => {
+                    var myLatLng = new google.maps.LatLng(location[1], location[2]);
+
+                    var marker = new google.maps.Marker({
+                      position: myLatLng,
+                      title: location[0],
                       icon: "/img/icon-pin.svg",
                     });
-                  });
-                }
 
-                [russia, sng, europe].forEach((checkbox) => {
-                  checkbox.addEventListener("change", (evt) => {
+                    markers.push(marker);
+                  });
+                };
+
+                const initialCheck = () => {
+                  if(russia.checked) {
+                    showMarkers(russiaLocations);
+                  }
+
+                  if(sng.checked) {
+                    showMarkers(sngLocations);
+                  }
+
+                  if(europe.checked) {
+                    showMarkers(europeLocations);
+                  }
+                };
+
+                const addListeners = () => {
+                  russia.addEventListener(`change`, (evt) => {
                     evt.preventDefault();
 
-                    initMap();
+                    checkMarkers(russia, russiaLocations);
                   });
-                });
+
+                  sng.addEventListener(`change`, (evt) => {
+                    evt.preventDefault();
+
+                    checkMarkers(sng, sngLocations);
+                  });
+
+                  europe.addEventListener(`change`, (evt) => {
+                    evt.preventDefault();
+
+                    checkMarkers(europe, europeLocations);
+                  });
+                };
 
                 function initMap() {
                   map = new google.maps.Map(document.getElementById('map'), opt);
 
-                  if (russia.checked) {
-                    setMarkers(map, russiaLocations);
-                  }
-
-                  if (sng.checked) {
-                    setMarkers(map, sngLocations);
-                  }
-
-                  if (europe.checked) {
-                    setMarkers(map, europeLocations);
-                  }
+                  addAllMarkers();
+                  initialCheck();
+                  addListeners();
                 }
               </script>
             </div>
