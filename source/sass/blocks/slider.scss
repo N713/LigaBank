@@ -24,7 +24,7 @@
   position: relative;
   background: linear-gradient(180.33deg, rgba(32, 39, 179, 0) 32.89%, #2027b3 99.79%);
   z-index: -2;
-  overflow-y: hidden;
+  overflow: hidden;
 }
 
 .slider__list-item h2 {
@@ -200,10 +200,6 @@
 }
 
 @media (max-width: 1150px) {
-  .slider__list-item img {
-    left: -15%;
-  }
-
   .slider__cards-wrapper--black img {
     left: 0;
     top: 95px;
@@ -245,7 +241,7 @@
   }
 
   .slider__list-item img {
-    width: auto;
+    width: 100%;
     height: 300px;
     left: 0;
   }

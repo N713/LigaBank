@@ -32,14 +32,15 @@ const tabletSwiper = new Swiper(`.swiper-container-services`, {
 
 const setTabsHandlers = () => {
   for (let i = 0; i < tabs.length; i++) {
-    tabs[i].addEventListener(`click`, () => {
+    tabs[i].addEventListener(`click`, (evt) => {
+      evt.preventDefault();
+
       tabs.forEach((tab) => {
         tab.classList.remove(`services__list-item--active`);
       });
 
       tabs[i].classList.add(`services__list-item--active`);
       tabletSwiper.slideTo(i);
-      tabletSwiper.width(SLIDE_WIDTH * tabs.length);
     });
   }
 };

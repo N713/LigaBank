@@ -32,7 +32,7 @@ const fieldNames = {
 const fieldStrings = {
   home: `Cтоимость ${fieldNames.home}`,
   car: `Cтоимость ${fieldNames.car}`,
-  cash: `Cтоимость ${fieldNames.cash}`,
+  cash: `Cумма ${fieldNames.cash}`,
 };
 
 const fieldSteps = {

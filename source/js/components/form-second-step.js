@@ -215,13 +215,13 @@ makeRequestButton.addEventListener(`click`, (evt) => {
   const goals = {
     home: `Ипотека`,
     car: `Автокредит`,
-    cash: `Кредит`,
+    cash: `Потребительский кредит`,
   };
 
   const things = {
-    home: `недвижимости`,
-    car: `автомобиля`,
-    cash: `кредита`,
+    home: `Стоимость недвижимости`,
+    car: `Стоимость автомобиля`,
+    cash: `Сумма кредита`,
   };
 
   switch (select.value) {

@@ -29,6 +29,10 @@
   min-width: auto;
 }
 
+.header__list {
+  flex-wrap: nowrap;
+}
+
 .header__list-item {
   display: flex;
   flex-shrink: 0;

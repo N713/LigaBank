@@ -29,7 +29,7 @@ const setRequestFields = (number, goal, sum, initial, years, stringSum) => {
   sumField.textContent = sum;
   initialField.textContent = initial;
   yearsField.textContent = years;
-  sumString.textContent = `Стоимость ${stringSum}`;
+  sumString.textContent = `${stringSum}`;
 };
 
 const deleteShakeClass = () => {
