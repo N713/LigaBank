@@ -55,6 +55,7 @@
   color: #707c87;
   position: absolute;
   top: 43px;
+  background-color: transparent;
 }
 
 .footer__list {
@@ -90,6 +91,7 @@
   position: relative;
   text-decoration: none;
   color: $darkColor;
+  background-color: transparent;
 
   &:hover {
     cursor: pointer;

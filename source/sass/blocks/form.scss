@@ -111,6 +111,11 @@
   margin-left: 20px;
 }
 
+.form__plus-button span,
+.form__minus-button span {
+  display: block;
+}
+
 .form__first-step,
 .form__second-step,
 .form__offer,

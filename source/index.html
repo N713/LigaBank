@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="Description" content="Сайт Лига Банка">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="preload" href="fonts/robotoregular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
   <link rel="preload" href="fonts/robotomedium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
@@ -219,7 +220,8 @@
               <div class="form__wrapper-second">
                 <div class="form__first-step">
                   <h3>Шаг 1. Цель кредита</h3>
-                  <select name="select">
+                  <label for="credit-type" class="visually-hidden">Выберите тип кредита</label>
+                  <select name="select" id="credit-type">
                     <option value="non-selected">Выберите цель кредита</option>
                     <option value="mortgage">Ипотечное кредитование</option>
                     <option value="carloan">Автомобильное кредитование</option>
@@ -259,6 +261,7 @@
                            data-mask="[0]000000 {рублей}"
                            data-input-mask="000000[0] {рублей}"
                            required>
+                    <label for="initial-percent" class="visually-hidden">Процент от суммы кредита</label>
                     <input type="range" name="initial-percent" id="initial-percent"
                            data-min="10"
                            data-max="100"
@@ -271,7 +274,7 @@
                     </datalist>
                   </div>
                   <div class="form__year-wrapper range">
-                    <label for="initial-payment">Срок кредитования</label>
+                    <label for="years">Срок кредитования</label>
                     <input type="text"
                            value="5 лет"
                            name="years"
@@ -279,6 +282,7 @@
                            data-min="5"
                            data-max="30"
                            required>
+                    <label for="years-range">Срок кредитования. Ползунок</label>
                     <input type="range"
                            name="years-range"
                            id="years-range"
