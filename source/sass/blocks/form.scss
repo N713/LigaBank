@@ -38,7 +38,7 @@
   width: 100%;
   min-height: 1px;
   background-color: white;
-  margin-bottom: 30px;
+  margin-bottom: 0;
   position: relative;
 }
 
@@ -51,6 +51,10 @@
   font-size: 14px;
   line-height: 20px;
   color: #707c87;
+}
+
+.form__year-wrapper input[id="years-range"] {
+  margin-bottom: 30px;
 }
 
 .form__year-wrapper input[type="range"]::before {
@@ -203,6 +207,10 @@
 .form__year-wrapper {
   display: flex;
   flex-direction: column;
+}
+
+.form__initial-payment-wrapper {
+  margin-bottom: 30px;
 }
 
 .form__initial-payment-wrapper label,
@@ -417,6 +425,7 @@
 @media (max-width: $tabletResolution) {
   .form {
     padding: 70px 45px;
+    padding-top: 63px;
     margin-bottom: 0;
   }
 
@@ -460,6 +469,10 @@
     position: relative;
     top: -2px;
     left: 4px;
+  }
+
+  .form__initial-payment-wrapper {
+    margin-bottom: 0;
   }
 
   .form__initial-payment-wrapper input[type="range"] {
@@ -533,6 +546,7 @@
 @media (max-width: $mobileResolution) {
   .form {
     padding: 53px 15px;
+    padding-top: 47px;
     margin-bottom: 0;
   }
 

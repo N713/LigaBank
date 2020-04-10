@@ -95,7 +95,7 @@
   background-image: url("../img/icon-cellphone.svg");
   background-repeat: no-repeat;
   background-position: center center;
-  margin-right: 3px;
+  margin-right: 10px;
 }
 
 .services__second-list {
@@ -153,17 +153,31 @@
   }
 }
 
+.services__second-list-item-wrapper .button {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+}
+
 .services__image-wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
   width: 440px;
   overflow: hidden;
   margin-right: 6.2%;
-  position: relative;
   top: 5px;
 }
 
 .services__image-wrapper img {
+  //position: absolute;
+  //right: 0;
+  //top: 0;
   display: block;
   width: 100%;
+  height: auto;
+  //width: 440px;
+  //height: 290px;
 }
 
 .services__second-list-item--car h3 {
@@ -181,8 +195,14 @@
 }
 
 .services__second-list-item--lock img {
-  position: relative;
-  top: -7px;
+  //position: relative;
+  //top: -7px;
+  ////position: absolute;
+  ////right: 0;
+  ////top: 0;
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .services__second-list-item--phone h3 {
@@ -190,8 +210,14 @@
 }
 
 .services__second-list-item--phone img {
-  position: relative;
-  top: -5px;
+  //position: relative;
+  //top: -5px;
+  ////position: absolute;
+  ////right: 0;
+  ////top: 0;
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .services__second-list-item--phone .services__sublist-item:first-of-type {
@@ -375,7 +401,7 @@
     height: 20px;
     margin: 0 auto;
     position: absolute;
-    bottom: 8px;
+    bottom: 15px;
     right: 41.75%;
   }
 
@@ -534,7 +560,7 @@
   }
 
   .services__pagination {
-    bottom: 3px;
+    bottom: 9px;
     right: 35%;
   }
 

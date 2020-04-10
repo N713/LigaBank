@@ -1,0 +1,55 @@
+.burger {
+  display: none;
+}
+
+.burger__nav {
+  @include reset;
+
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+}
+
+.burger__nav-item {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 10px;
+  min-height: 56.5px;
+  border-bottom: 1px solid lighten($darkColor, 50);
+  background-color: $lightBlueColor;
+}
+
+.burger__nav-item:first-child {
+  border-top: 1px solid lighten($darkColor, 50);
+}
+
+.burger__nav-link {
+  text-decoration: none;
+  color: $darkColor;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+
+  &:hover {
+    cursor: pointer;
+    opacity: 0.5;
+  }
+
+  &:active {
+    opacity: 0.2;
+  }
+}
+
+@media (max-width: $mobileResolution) {
+  .burger {
+    width: 100%;
+    display: block;
+    position: absolute;
+    top: 48px;
+    left: 0;
+  }
+}

@@ -5,6 +5,7 @@ import {setLoginFormHandlers} from "./components/login-form";
 import {setHeaderLinksHandlers} from "./components/header-links";
 import {setSelectHandler, setFormHandlers} from "./components/form";
 import {makeOffer} from "./components/form-second-step";
+import {setBurgerHandler} from "./components/burger";
 import smoothscroll from 'smoothscroll-polyfill';
 
 import {addAllMarkers, initialCheck, addListeners} from "./components/map";
@@ -25,3 +26,4 @@ setHeaderLinksHandlers();
 setSelectHandler();
 setFormHandlers();
 makeOffer();
+setBurgerHandler();

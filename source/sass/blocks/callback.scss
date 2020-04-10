@@ -3,7 +3,8 @@
   flex-direction: column;
   box-sizing: border-box;
   width: 500px;
-  padding: 25px;
+  padding: 24px;
+  padding-bottom: 20px;
   background-color: $lightBlueColor;
   position: fixed;
   margin: 0 auto;
@@ -16,7 +17,7 @@
 
 .callback button {
   margin-left: auto;
-  margin-bottom: 26px;
+  margin-bottom: 10px;
 }
 
 .callback h2 {
@@ -26,7 +27,7 @@
   line-height: 31px;
   color: $darkColor;
   margin: 0 auto;
-  margin-bottom: 25px;
+  margin-bottom: 12px;
 }
 
 .callback p {

@@ -3,7 +3,12 @@
   display: inline-block;
   background-color: transparent;
   border: none;
-  padding: 5px;
+  box-sizing: border-box;
+  width: 18px;
+  height: 18px;
+  padding: 2px;
+  outline: none;
+
 
   &:hover {
     opacity: 0.5;
@@ -13,4 +18,14 @@
   &:active {
     opacity: 0.2;
   }
+}
+
+.icon-button--close {
+  background-image: url("../img/icon-close.svg");
+}
+
+.icon-button--showpass {
+  width: 22px;
+  height: 12px;
+  background-image: url("../img/icon-showpass.svg");
 }

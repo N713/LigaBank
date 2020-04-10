@@ -5,9 +5,10 @@
 }
 
 .list {
+  @include reset;
   list-style: none;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 
 .list__item-link {

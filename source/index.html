@@ -9,6 +9,18 @@
   <link rel="preload" href="fonts/robotomedium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
   <link rel="preload" href="fonts/robotobold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
   <link rel="stylesheet" href="css/style.min.css">
+  <!-- Pixel Glass -->
+  <style>
+    HTML {
+      background-repeat: no-repeat;
+      background-position:  50% 0;
+      /*background-image: url( "img/DESKTOP.jpg" );
+      opacity: 0.5;
+    }
+  </style>
+  <link href="../node_modules/pixel-glass/styles.css" rel="stylesheet">
+  <script src="../node_modules/pixel-glass/script.js"></script>
+  <!-- // Pixel Glass -->
   <script>
     document.createElement( "picture" );
     //По руководству автора - http://scottjehl.github.io/picturefill/
@@ -282,7 +294,7 @@
                            data-min="5"
                            data-max="30"
                            required>
-                    <label for="years-range">Срок кредитования. Ползунок</label>
+                    <label for="years-range" class="visually-hidden">Срок кредитования. Ползунок</label>
                     <input type="range"
                            name="years-range"
                            id="years-range"
@@ -583,8 +595,8 @@
         <h2 class="visually-hidden">Вход в личный кабинет</h2>
         <div class="login__wrapper">
           <img src="img/logo-login.svg" width="151" height="31" alt="Лига Банк">
-          <button class="icon-button">
-            <img src="img/icon-close.svg" width="18" height="18" alt="Закрыть окно">
+          <button class="icon-button icon-button--close">
+            <span class="visually-hidden">Закрыть окно</span>
           </button>
         </div>
         <form class="login__form" id="login-form">
@@ -595,8 +607,8 @@
           <div class="login__form-wrapper">
             <label for="password">Пароль</label>
             <input type="password" name="password" id="password" required>
-            <button type="button" class="icon-button">
-              <img src="img/icon-showpass.svg" width="22" height="12" alt="Показать пароль">
+            <button type="button" class="icon-button icon-button--showpass">
+              <span class="visually-hidden">Показать пароль</span>
             </button>
             <a class="login__link" href="#">Забыли пароль?</a>
           </div>
@@ -604,15 +616,31 @@
         </form>
       </div>
       <div class="callback visually-hidden">
-        <button class="icon-button">
-          <img src="img/icon-close.svg" width="18" height="18" alt="Закрыть окно">
+        <button class="icon-button icon-button--close">
+          <span class="visually-hidden">Закрыть окно</span>
         </button>
         <h2>Спасибо за обращение в наш банк.</h2>
         <p>Наш менеджер скоро свяжется с вами по указанному номеру телефона.</p>
       </div>
-      <script src="js/vendor.js"></script>
-      <script src="js/script.js"></script>
-      <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCxIvxg5RscF0EUdLEhgwAvTVzR5fHt4xI&callback=initMap"></script>
+      <div class="burger visually-hidden">
+        <ul class="burger__nav">
+          <li class="burger__nav-item">
+            <a href="#" class="burger__nav-link">Услуги</a>
+          </li>
+          <li class="burger__nav-item">
+            <a href="#" class="burger__nav-link">Рассчитать кредит</a>
+          </li>
+          <li class="burger__nav-item">
+            <a href="#" class="burger__nav-link">Контакты</a>
+          </li>
+          <li class="burger__nav-item">
+            <a href="#" class="burger__nav-link">Задать вопрос</a>
+          </li>
+        </ul>
+      </div>
     </div>
+    <script src="js/vendor.js"></script>
+    <script src="js/script.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCxIvxg5RscF0EUdLEhgwAvTVzR5fHt4xI&callback=initMap"></script>
   </body>
 </html>
