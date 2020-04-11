@@ -27,9 +27,9 @@ export class sumInput {
 
   changeSum(direction = `plus`) {
     let sum = utils.inputSumToInteger(this._input);
-    let min = this.getIntegerValue(`min`);
-    let max = this.getIntegerValue(`max`);
-    let step = this.getIntegerValue(`step`);
+    let min = this.getIntegerValue(`data-min`);
+    let max = this.getIntegerValue(`data-max`);
+    let step = this.getIntegerValue(`data-step`);
 
     if (sum <= min + step) {
       this._buttonMinus.setAttribute(`disabled`, ``);
@@ -55,7 +55,7 @@ export class sumInput {
   }
 
   setHandlers() {
-    const currentPercent = Number(this._rangeBoundedInput.getAttribute(`min`)) / 100;
+    const currentPercent = Number(this._rangeBoundedInput.getAttribute(`data-min`)) / 100;
     utils.setPercent(this._boundedInput, this._input, currentPercent);
 
     this._input.addEventListener(`input`, () => {
@@ -69,8 +69,8 @@ export class sumInput {
 
       utils.addCurrencySubstr(this._input, this._currency);
 
-      let min = this.getIntegerValue(`min`);
-      let max = this.getIntegerValue(`max`);
+      let min = this.getIntegerValue(`data-min`);
+      let max = this.getIntegerValue(`data-max`);
       const sum = utils.inputSumToInteger(this._input);
 
       if (sum > max || sum < min) {

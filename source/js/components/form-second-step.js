@@ -29,6 +29,7 @@ const nonLess = document.body.querySelector(`.form .form__wrapper .non-less`);
 const nonLessText = nonLess.querySelector(`h2`);
 const makeRequestButton = offer.querySelector(`.button--make-request`);
 
+const offerInitialsPay = document.body.querySelector(`.form .form__list-item--initial`);
 let offerSum = offer.querySelector(`.form .form__offer-wrapper--sum h4`);
 let offerPercent = offer.querySelector(`.form .form__offer-wrapper--percent h4`);
 let offerMonth = offer.querySelector(`.form .form__offer-wrapper--monthly h4`);
@@ -228,13 +229,25 @@ makeRequestButton.addEventListener(`click`, (evt) => {
     case `mortgage`:
       setRequestFields(number, goals.home, mortgageSum.value, initialPayment.value, yearsInput.value, things.home);
 
+      if (offerInitialsPay.classList.contains(`visually-hidden`)) {
+        offerInitialsPay.classList.remove(`visually-hidden`);
+      }
+
       break;
     case `carloan`:
       setRequestFields(number, goals.car, mortgageSum.value, initialPayment.value, yearsInput.value, things.car);
 
+      if (offerInitialsPay.classList.contains(`visually-hidden`)) {
+        offerInitialsPay.classList.remove(`visually-hidden`);
+      }
+
       break;
     case `consumercredit`:
       setRequestFields(number, goals.cash, mortgageSum.value, initialPayment.value, yearsInput.value, things.cash);
+
+      if (!offerInitialsPay.classList.contains(`visually-hidden`)) {
+        offerInitialsPay.classList.add(`visually-hidden`);
+      }
 
       break;
   }

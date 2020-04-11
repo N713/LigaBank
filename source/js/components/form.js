@@ -15,6 +15,7 @@ const sumInitialRange = document.body.querySelector(`.form .form__initial-paymen
 const sumYears = document.body.querySelector(`.form .form__year-wrapper #years`);
 const yearsRange = document.body.querySelector(`.form .form__year-wrapper #years-range`);
 const percentRange = document.body.querySelector(`.form .form__initial-payment-wrapper #initial-percent`);
+const initialPaymentsWrapper = document.body.querySelector(`.form .form__initial-payment-wrapper`);
 
 const selectValues = {
   not: `non-selected`,
@@ -122,6 +123,10 @@ const setSelectHandler = () => {
         yearsRange.setAttribute(`data-max`, maxYears.home + ` лет`);
         percentRange.setAttribute(`step`, maxYears.car);
 
+        if (initialPaymentsWrapper.classList.contains(`visually-hidden`)) {
+          initialPaymentsWrapper.classList.remove(`visually-hidden`);
+        }
+
         appendMortgageCheckbox();
         makeOffer();
 
@@ -148,6 +153,10 @@ const setSelectHandler = () => {
         yearsRange.setAttribute(`data-max`, maxYears.car + ` лет`);
         percentRange.setAttribute(`step`, maxYears.car);
 
+        if (initialPaymentsWrapper.classList.contains(`visually-hidden`)) {
+          initialPaymentsWrapper.classList.remove(`visually-hidden`);
+        }
+
         appendInsuranceCheckboxes();
         makeOffer();
 
@@ -173,6 +182,10 @@ const setSelectHandler = () => {
         yearsRange.setAttribute(`data-min`, minYears.car + ` лет`);
         yearsRange.setAttribute(`data-max`, maxYears.cash + ` лет`);
         percentRange.setAttribute(`step`, minYears.car);
+
+        if (!initialPaymentsWrapper.classList.contains(`visually-hidden`)) {
+          initialPaymentsWrapper.classList.add(`visually-hidden`);
+        }
 
         appendSalaryCheckbox();
         makeOffer();
