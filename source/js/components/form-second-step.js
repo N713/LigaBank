@@ -210,6 +210,7 @@ makeRequestButton.addEventListener(`click`, (evt) => {
 
   const select = document.body.querySelector(`.form .form__first-step select`);
   const numberString = document.body.querySelector(`.form .form__third-step .form__list-item--number h4`);
+  const focusField = document.body.querySelector(`.form__third-step input[type=text]`);
   const split = numberString.textContent.split(` `);
   const number = `№ 00${Number(split[split.length - 1]) + 1}`;
 
@@ -224,6 +225,8 @@ makeRequestButton.addEventListener(`click`, (evt) => {
     car: `Стоимость автомобиля`,
     cash: `Сумма кредита`,
   };
+
+  focusField.focus();
 
   switch (select.value) {
     case `mortgage`:

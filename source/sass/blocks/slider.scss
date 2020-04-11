@@ -67,7 +67,7 @@
 
 .slider__list-item img {
   width: 100%;
-  height: auto;
+  height: 100%;
   position: absolute;
   top: 0;
   right: 0;
@@ -211,6 +211,19 @@
     left: 108px;
     top: 37px;
     z-index: -2;
+  }
+}
+
+@media (min-width: 1367px) {
+  .slider__list-item img {
+    width: 100%;
+    height: auto;
+  }
+
+  .slider__cards-wrapper img {
+    position: absolute;
+    width: 335px;
+    height: 228px;
   }
 }
 
