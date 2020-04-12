@@ -1,6 +1,6 @@
 'use strict';
 
-import IMask from "imask";
+import numeralize from "numeralize-ru";
 import {utils, FIND_SPACES_REG} from "./utils";
 
 export class sumInput {
@@ -12,9 +12,6 @@ export class sumInput {
     this._boundedInput = boundedInput;
     this._rangeBoundedInput = rangeBoundedInput;
     this._offerFunction = offerFunction;
-    this._inputMask = IMask(this._input, {
-      mask: this._input.getAttribute(`data-mask`)
-    });
   }
 
   init() {
@@ -45,12 +42,14 @@ export class sumInput {
 
     if (direction === `plus`) {
       sum = sum + step;
-      this._input.value = `${sum.toLocaleString(`ru`)} ${this._currency}`;
+      this._input.value = `${sum.toLocaleString(`ru`)} ${numeralize
+        .pluralize(sum, `рубль`,`рубля`, `рублей`)}`;
     }
 
     if (direction === `minus`) {
       sum = sum - step;
-      this._input.value = `${sum.toLocaleString(`ru`)} ${this._currency}`;
+      this._input.value = `${sum.toLocaleString(`ru`)} ${numeralize
+        .pluralize(sum, `рубль`,`рубля`, `рублей`)}`;
     }
   }
 
@@ -59,7 +58,6 @@ export class sumInput {
     utils.setPercent(this._boundedInput, this._input, currentPercent);
 
     this._input.addEventListener(`input`, () => {
-      this._inputMask.mask = this._input.getAttribute(`data-input-mask`);
       this._input.classList.remove(`error`);
       this._offerFunction();
     });
@@ -67,19 +65,16 @@ export class sumInput {
     this._input.addEventListener(`change`, (evt) => {
       evt.preventDefault();
 
-      utils.addCurrencySubstr(this._input, this._currency);
-
+      const value = utils.makeValue(this._input);
       let min = this.getIntegerValue(`data-min`);
       let max = this.getIntegerValue(`data-max`);
-      const sum = utils.inputSumToInteger(this._input);
 
-      if (sum > max || sum < min) {
-        this._inputMask.mask = this._input.getAttribute(`data-error-mask`);
+      if (value > max || value < min) {
+        this._input.value = `${this._input.getAttribute(`data-error-mask`)}`;
         this._input.classList.add(`error`);
       } else {
-        this._inputMask.updateValue();
-        this._inputMask.mask = this._input.getAttribute(`data-mask`);
-        this._input.value = `${sum.toLocaleString(`ru`)} ${this._currency}`;
+        this._input.value = `${value.toLocaleString(`ru`)} ${numeralize
+          .pluralize(value, `рубль`,`рубля`, `рублей`)}`;
       }
 
       utils.setPercent(this._boundedInput, this._input, currentPercent);
@@ -90,7 +85,6 @@ export class sumInput {
       evt.preventDefault();
 
       this.changeSum();
-      this._inputMask.updateValue();
       utils.setPercent(this._boundedInput, this._input, currentPercent);
       this._offerFunction();
     });
@@ -99,7 +93,6 @@ export class sumInput {
       evt.preventDefault();
 
       this.changeSum(`minus`);
-      this._inputMask.updateValue();
       utils.setPercent(this._boundedInput, this._input, currentPercent);
       this._offerFunction();
     });

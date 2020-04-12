@@ -1,7 +1,7 @@
 'use strict';
 
 import {utils} from "./utils";
-import IMask from "imask";
+import numeralize from "numeralize-ru";
 
 export class inputInitialPay {
   constructor(input, currency, boundedInput, rangeInput, offerFunction) {
@@ -10,9 +10,6 @@ export class inputInitialPay {
     this._boundedInput = boundedInput;
     this._rangeInput = rangeInput;
     this._offerFunction = offerFunction;
-    this._inputMask = IMask(this._input, {
-      mask: this._input.getAttribute(`data-mask`) + `${this._currency}`
-    });
   }
 
   init() {
@@ -20,30 +17,23 @@ export class inputInitialPay {
   }
 
   setHandlers() {
-    this._input.addEventListener(`input`, (evt) => {
-      evt.preventDefault();
-
-      this._inputMask.mask = this._input.getAttribute(`data-input-mask`);
-    });
-
     this._input.addEventListener(`change`, (evt) => {
       evt.preventDefault();
-      utils.addCurrencySubstr(this._input, this._currency);
 
-      let sum = utils.inputSumToInteger(this._input);
-      const value = utils.inputSumToInteger(this._boundedInput);
-      const percent = value * (Number(this._rangeInput.getAttribute(`min`)) / 100);
+      const value = utils.makeValue(this._input);
+      const valueBounded = utils.makeValue(this._boundedInput);
+      const percentRate = Number(this._rangeInput.getAttribute(`data-min`).split(`%`)[0]);
+      const percent = valueBounded * (percentRate / 100);
 
-      if (sum < percent) {
-        this._input.value = `${percent.toLocaleString(`ru`)} ${this._currency}`;
-        this._rangeInput.value = this._rangeInput.getAttribute(`min`);
+      if (value < percent) {
+        this._input.value = `${percent.toLocaleString(`ru`)} ${numeralize
+          .pluralize(percent, `рубль`, `рубля`, `рублей`)}`;
+        this._rangeInput.value = percentRate;
+      } else {
+        this._input.value = `${value.toLocaleString(`ru`)} ${numeralize
+          .pluralize(value, `рубль`, `рубля`, `рублей`)}`;
+        this._offerFunction();
       }
-
-      const currentSum = utils.inputSumToInteger(this._input);
-      this._input.value = `${currentSum.toLocaleString(`ru`)} ${this._currency}`;
-      this._inputMask.mask = `${currentSum.toLocaleString(`ru`)} ${this._currency}`;
-
-      this._offerFunction();
     });
   }
 }

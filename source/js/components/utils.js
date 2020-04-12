@@ -1,7 +1,8 @@
 'use strict';
 
 const ROUBLES = `рублей`;
-const  FIND_SPACES_REG = /\s+/g;
+const FIND_SPACES_REG = /\s+/g;
+const NOT_A_NUMBER_REG = /[^0-9]/i;
 
 const utils = {
   Position: {
@@ -104,6 +105,19 @@ const utils = {
       sum = sum - step;
       input.value = `${sum.toLocaleString(`ru`)} ${currency}`;
     }
+  },
+
+  makeValue(input) {
+    const split = input.value.replace(NOT_A_NUMBER_REG, ` `).split(` `);
+    const match = split[split.length - 1].match(NOT_A_NUMBER_REG);
+
+    if (match) {
+      split.pop();
+    }
+
+    const value = split.join(``).replace(FIND_SPACES_REG, ``);
+
+    return Number(value);
   },
 
 };
