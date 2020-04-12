@@ -20,11 +20,11 @@
       <div class="container">
         <h1 class="visually-hidden">Лига Банк</h1>
         <header class="header">
-          <button class="icon-button">
-            <img src="img/burger.svg" width="16" height="12" alt="Открыть меню">
+          <button class="icon-button icon-button--burger">
+            <span class="visually-hidden">Открыть меню</span>
           </button>
           <a class="header__logo">
-            <img src="img/Logo.svg" width="152" height="28" alt="Лига Банк">
+            <img src="img/Logo.svg" width="152" height="28" alt="Логотип">
           </a>
           <nav class="header__nav">
             <ul class="list header__list">
@@ -43,7 +43,9 @@
             </ul>
           </nav>
           <a href="#" class="header__login">
-            <img src="img/icon-login.svg" width="20" height="22" alt="Войти в Интернет-банк">
+            <svg width="20" height="22" viewBox="0 0 20 22">
+              <use xlink:href="img/sprite.svg#icon-login"></use>
+            </svg>
             <span class="header__login-link">Войти в Интернет-банк</span>
           </a>
         </header>
@@ -251,7 +253,7 @@
                         <span class="visually-hidden">Плюс</span>
                       </button>
                     </div>
-                    <span>От 1 200 000 до 25 000 000 рублей</span>
+                    <span class="limits">От 1 200 000 до 25 000 000 рублей</span>
                   </div>
                   <div class="form__initial-payment-wrapper range">
                     <label for="initial-payment">Первоначальный взнос</label>
@@ -412,7 +414,8 @@
         </main>
         <footer class="footer">
           <div class="footer__logo-wrapper">
-            <img src="img/Logo.svg" width="152" height="28" alt="Лига Банк">
+            <span class="visually-hidden">Логотип</span>
+            <img src="img/Logo.svg" width="152" height="28" alt="Логотип">
             <p>
               150015, г. Москва, ул. Московская, д. 32
               Генеральная лицензия Банка России №1050
@@ -448,25 +451,33 @@
               <li class="list__item footer__socials-item">
                 <a href="#" class="list__item-link footer__socials-item-link footer__socials-item-link--fb">
                   <span class="visually-hidden">Facebook</span>
-                  <img src="img/icon-fb.svg" width="9" height="16" alt="Facebook">
+                  <svg width="9" height="16" viewBox="0 0 9 16">
+                    <use xlink:href="img/sprite.svg#icon-fb"></use>
+                  </svg>
                 </a>
               </li>
               <li class="list__item footer__socials-item">
                 <a href="#" class="list__item-link footer__socials-item-link footer__socials-item-link--ig">
                   <span class="visually-hidden">Instagram</span>
-                  <img src="img/icon-ig.svg" width="16" height="16" alt="Instagram">
+                  <svg width="16" height="16" viewBox="0 0 16 16">
+                    <use xlink:href="img/sprite.svg#icon-ig"></use>
+                  </svg>
                 </a>
               </li>
               <li class="list__item footer__socials-item">
                 <a href="#" class="list__item-link footer__socials-item-link footer__socials-item-link--tw">
                   <span class="visually-hidden">Twitter</span>
-                  <img src="img/icon-tw.svg" width="16" height="13" alt="Facebook">
+                  <svg width="16" height="13" viewBox="0 0 16 13">
+                    <use xlink:href="img/sprite.svg#icon-tw"></use>
+                  </svg>
                 </a>
               </li>
               <li class="list__item footer__socials-item">
                 <a href="#" class="list__item-link footer__socials-item-link footer__socials-item-link--yt">
                   <span class="visually-hidden">Youtube</span>
-                  <img src="img/icon-yt.svg" width="16" height="13" alt="Youtube">
+                  <svg width="16" height="13" viewBox="0 0 16 13">
+                    <use xlink:href="img/sprite.svg#icon-yt"></use>
+                  </svg>
                 </a>
               </li>
             </ul>
@@ -476,7 +487,8 @@
       <div class="login visually-hidden">
         <h2 class="visually-hidden">Вход в личный кабинет</h2>
         <div class="login__wrapper">
-          <img src="img/logo-login.svg" width="151" height="31" alt="Лига Банк">
+          <span class="visually-hidden">Логотип</span>
+          <img src="img/Logo.svg" width="152" height="28" alt="Логотип">
           <button class="icon-button icon-button--close">
             <span class="visually-hidden">Закрыть окно</span>
           </button>

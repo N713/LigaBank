@@ -9,7 +9,7 @@ const secondStep = document.body.querySelector(`.form .form__second-step`);
 const offer = document.body.querySelector(`.form .form__offer`);
 
 const fieldName = document.body.querySelector(`.form .form__price-wrapper label`);
-const fieldLimits = document.body.querySelector(`.form .form__price-wrapper span`);
+const fieldLimits = document.body.querySelector(`.form .form__price-wrapper .limits`);
 const sumInput = document.body.querySelector(`.form .form__price-wrapper-second #property-price`);
 const sumInitialRange = document.body.querySelector(`.form .form__initial-payment-wrapper #initial-percent`);
 const sumYears = document.body.querySelector(`.form .form__year-wrapper #years`);
@@ -105,18 +105,17 @@ const setSelectHandler = () => {
       case selectValues.home:
         showWindows();
 
-        sumInput.setAttribute(`step`, fieldSteps.home);
-        sumInput.setAttribute(`min`, fieldMins.home);
-        sumInput.setAttribute(`max`, fieldMaxes.home);
+        sumInput.setAttribute(`data-step`, fieldSteps.home);
+        sumInput.setAttribute(`data-min`, fieldMins.home);
+        sumInput.setAttribute(`data-max`, fieldMaxes.home);
         fieldName.textContent = fieldStrings.home;
         fieldLimits.textContent = limitsStrings.home;
 
         sumInitialRange.setAttribute(`value`, minPercents.home);
-        sumInitialRange.setAttribute(`min`, minPercents.home);
         sumInitialRange.setAttribute(`data-min`, minPercents.home + `%`);
 
-        sumYears.setAttribute(`min`, minYears.home);
-        sumYears.setAttribute(`max`, maxYears.home);
+        sumYears.setAttribute(`data-min`, minYears.home);
+        sumYears.setAttribute(`data-max`, maxYears.home);
         yearsRange.setAttribute(`min`, minYears.home);
         yearsRange.setAttribute(`max`, maxYears.home);
         yearsRange.setAttribute(`data-min`, minYears.home + ` лет`);
@@ -135,18 +134,17 @@ const setSelectHandler = () => {
       case selectValues.car:
         showWindows();
 
-        sumInput.setAttribute(`step`, fieldSteps.car);
-        sumInput.setAttribute(`min`, fieldMins.car);
-        sumInput.setAttribute(`max`, fieldMaxes.car);
+        sumInput.setAttribute(`data-step`, fieldSteps.car);
+        sumInput.setAttribute(`data-min`, fieldMins.car);
+        sumInput.setAttribute(`data-max`, fieldMaxes.car);
         fieldName.textContent = fieldStrings.car;
         fieldLimits.textContent = limitsStrings.car;
 
         sumInitialRange.setAttribute(`value`, minPercents.car);
-        sumInitialRange.setAttribute(`min`, minPercents.car);
         sumInitialRange.setAttribute(`data-min`, minPercents.car + `%`);
 
-        sumYears.setAttribute(`min`, minYears.car);
-        sumYears.setAttribute(`max`, maxYears.car);
+        sumYears.setAttribute(`data-min`, minYears.car);
+        sumYears.setAttribute(`data-max`, maxYears.car);
         yearsRange.setAttribute(`min`, minYears.car);
         yearsRange.setAttribute(`max`, maxYears.car);
         yearsRange.setAttribute(`data-min`, minYears.car + ` лет`);
@@ -165,18 +163,17 @@ const setSelectHandler = () => {
       case selectValues.cash:
         showWindows();
 
-        sumInput.setAttribute(`step`, fieldSteps.cash);
-        sumInput.setAttribute(`min`, fieldMins.cash);
-        sumInput.setAttribute(`max`, fieldMaxes.cash);
+        sumInput.setAttribute(`data-step`, fieldSteps.cash);
+        sumInput.setAttribute(`data-min`, fieldMins.cash);
+        sumInput.setAttribute(`data-max`, fieldMaxes.cash);
         fieldName.textContent = fieldStrings.cash;
         fieldLimits.textContent = limitsStrings.cash;
 
         sumInitialRange.setAttribute(`value`, minPercents.cash);
-        sumInitialRange.setAttribute(`min`, minPercents.cash);
         sumInitialRange.setAttribute(`data-min`, minPercents.cash + `%`);
 
-        sumYears.setAttribute(`min`, minYears.car);
-        sumYears.setAttribute(`max`, maxYears.cash);
+        sumYears.setAttribute(`data-min`, minYears.car);
+        sumYears.setAttribute(`data-max`, maxYears.cash);
         yearsRange.setAttribute(`min`, minYears.car);
         yearsRange.setAttribute(`max`, maxYears.cash);
         yearsRange.setAttribute(`data-min`, minYears.car + ` лет`);

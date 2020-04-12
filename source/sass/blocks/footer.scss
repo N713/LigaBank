@@ -201,11 +201,18 @@
     position: relative;
     top: 13px;
     order: 3;
+    width: 100%;
   }
 
   .footer__nav {
     order: 2;
     margin-top: 24px;
+    width: 100%;
+  }
+
+  .footer__list-item:last-of-type {
+    position: relative;
+    top: -2px;
   }
 
   .footer__contacts-wrapper {
@@ -218,7 +225,7 @@
   }
 
   .footer__contacts-wrapper--smartphone a::before {
-    left: -30px;
+    left: -44px;
     top: 0;
   }
 
@@ -283,6 +290,10 @@
 
   .footer__contacts-wrapper--phone {
     padding-left: 30px;
+  }
+
+  .footer__contacts-wrapper--phone a:before {
+    left: -47px;
   }
 
   .footer__socials {
