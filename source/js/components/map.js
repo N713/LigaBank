@@ -3,13 +3,7 @@
 const russia = document.getElementById("russia");
 const sng = document.getElementById("sng");
 const europe = document.getElementById("europe");
-let map;
 let markers = [];
-
-let opt = {
-  center: {lat: 54.037157, lng: 59.967874},
-  zoom: 3.75
-};
 
 const russiaLocations = [
   ["Москва", 55.752696, 37.591423],
@@ -38,7 +32,7 @@ const showMarkers = (locations) => {
   markers.forEach((marker) => {
     for (let i = 0; i < locations.length; i++) {
       if (marker.title === locations[i][0]) {
-        marker.setMap(map);
+        marker.setMap(window.map);
       }
     }
   });
@@ -112,10 +106,10 @@ const addListeners = () => {
   });
 };
 
-function initMap() {
-  map = new google.maps.Map(document.getElementById('map'), opt);
-
+function setMap() {
   addAllMarkers();
   initialCheck();
   addListeners();
 }
+
+export {setMap}

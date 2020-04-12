@@ -8,7 +8,7 @@ import {makeOffer} from "./components/form-second-step";
 import {setBurgerHandler} from "./components/burger";
 import smoothscroll from 'smoothscroll-polyfill';
 
-import {addAllMarkers, initialCheck, addListeners} from "./components/map";
+import {setMap} from "./components/map";
 
 if (!String.prototype.startsWith) {
   String.prototype.startsWith = function(searchString, position){
@@ -16,6 +16,10 @@ if (!String.prototype.startsWith) {
     return this.substr(position, searchString.length) === searchString;
   };
 }
+
+document.addEventListener('map', function (e) {
+  setMap();
+}, false);
 
 smoothscroll.polyfill();
 setTabsHandlers();
