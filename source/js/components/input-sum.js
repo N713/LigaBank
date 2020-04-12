@@ -51,16 +51,27 @@ export class sumInput {
       this._input.value = `${sum.toLocaleString(`ru`)} ${numeralize
         .pluralize(sum, `рубль`,`рубля`, `рублей`)}`;
     }
+
+    this._rangeBoundedInput.value = (utils.makeValue(this._boundedInput) / sum) * 100;
   }
 
   setHandlers() {
     const currentPercent = Number(this._rangeBoundedInput.getAttribute(`data-min`)) / 100;
     utils.setPercent(this._boundedInput, this._input, currentPercent);
 
-    this._input.addEventListener(`input`, () => {
+    this._input.addEventListener(`focus`, () => {
       this._input.classList.remove(`error`);
+      this._input.value = ``;
       this._offerFunction();
     });
+
+    this._input.addEventListener(`blur`, () => {
+      const DEFAULT_VALUE = `2 500 000 рублей`;
+
+      if (this._input.value === ``) {
+        this._input.value = DEFAULT_VALUE;
+      }
+    })
 
     this._input.addEventListener(`change`, (evt) => {
       evt.preventDefault();
