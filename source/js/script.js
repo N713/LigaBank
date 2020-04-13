@@ -1,3 +1,7 @@
+'use strict';
+
+import '@babel/polyfill';
+import smoothscroll from 'smoothscroll-polyfill';
 import {setSliderLinksHandlers} from "./components/slider";
 import {tabletSwiper, setTabsHandlers} from "./components/services-slider";
 import {setPopupHandlers} from "./components/login-popup";
@@ -6,7 +10,6 @@ import {setHeaderLinksHandlers} from "./components/header-links";
 import {setSelectHandler, setFormHandlers} from "./components/form";
 import {makeOffer} from "./components/form-second-step";
 import {setBurgerHandler} from "./components/burger";
-import smoothscroll from 'smoothscroll-polyfill';
 
 import {setMap} from "./components/map";
 
